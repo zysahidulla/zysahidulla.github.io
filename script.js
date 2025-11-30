@@ -1,25 +1,85 @@
-// A simple function to add some interactivity
-document.addEventListener('DOMContentLoaded', () => {
+// 1. Typing Animation Logic
+const typingText = document.querySelector(".typing-text");
+const roles = [
+    "Programmer", 
+    "Software Engineer", 
+    "UI/UX Designer", 
+    "Prompt Engineer", 
+    "Computer Engineer"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+const typeEffect = () => {
+    const currentRole = roles[roleIndex];
     
-    // 1. Get a reference to the button
-    const ctaButton = document.getElementById('cta-button');
-
-    // 2. Define what happens when the button is clicked
-    const handleClick = () => {
-        // You could redirect them to a specific project page, or just alert them
-        alert('Awesome! You checked out my best project. Check the "Projects" section for the link!');
-        
-        // Optional: Scroll to the projects section
-        const projectsSection = document.getElementById('projects');
-        if (projectsSection) {
-            projectsSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
-    // 3. Attach the function to the button's click event
-    if (ctaButton) {
-        ctaButton.addEventListener('click', handleClick);
+    if (isDeleting) {
+        typingText.textContent = currentRole.substring(0, charIndex--);
+    } else {
+        typingText.textContent = currentRole.substring(0, charIndex++);
     }
 
-    console.log('Portfolio website script loaded and ready!');
+    let typeSpeed = isDeleting ? 50 : 100;
+
+    if (!isDeleting && charIndex === currentRole.length) {
+        typeSpeed = 2000; // Pause at end of word
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        typeSpeed = 500;
+    }
+
+    setTimeout(typeEffect, typeSpeed);
+}
+
+// Start typing on load
+typeEffect();
+
+
+// 2. Scroll Animation (Fade in Elements)
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
 });
+
+const hiddenElements = document.querySelectorAll(".hidden");
+hiddenElements.forEach((el) => observer.observe(el));
+
+
+// 3. Skill Bar Animation (Fills when scrolled to)
+const skillSection = document.getElementById('skills');
+const progressBars = document.querySelectorAll('.skill-per');
+
+const showProgress = () => {
+    progressBars.forEach(progressBar => {
+        const value = progressBar.getAttribute('data-width');
+        progressBar.style.width = value;
+    });
+}
+
+const hideProgress = () => {
+    progressBars.forEach(p => {
+        p.style.width = 0;
+    });
+}
+
+// Trigger skill animation
+const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            showProgress();
+        } else {
+            hideProgress();
+        }
+    });
+});
+
+if (skillSection) {
+    skillObserver.observe(skillSection);
+}
