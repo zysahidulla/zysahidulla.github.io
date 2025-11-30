@@ -7,7 +7,7 @@ const roles = [
     "Prompt Engineer", 
     "Computer Engineer"
 ];
-
+d
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
