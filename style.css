@@ -128,7 +128,7 @@ header {
 }
 
 .greet {
-    font-size: 0.9rem;
+    font-size: 10 rem;
     color: var(--primary);
     font-weight: 600;
     letter-spacing: 2px;
