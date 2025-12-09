@@ -1,6 +1,6 @@
 // 1. Typing Animation
 const typingText = document.querySelector(".typing-text");
-const roles = ["Web Designer", "Programmer", "UI/UX Designer", "Prompt Engineer"];
+const roles = ["Programmer", "Web Designer", "Prompt Engineer"];
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -17,7 +17,7 @@ const typeEffect = () => {
     let typeSpeed = isDeleting ? 50 : 100;
 
     if (!isDeleting && charIndex === currentRole.length) {
-        typeSpeed = 2000;
+        typeSpeed = 2000; // Pause
         isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
@@ -42,30 +42,16 @@ const hiddenElements = document.querySelectorAll(".hidden");
 hiddenElements.forEach((el) => observer.observe(el));
 
 // 3. Skill Bar Animation
-const skillSection = document.getElementById('skills');
-const progressBars = document.querySelectorAll('.skill-per');
-
-const showProgress = () => {
-    progressBars.forEach(progressBar => {
-        const value = progressBar.getAttribute('data-width');
-        progressBar.style.width = value;
-    });
-}
-
-const hideProgress = () => {
-    progressBars.forEach(p => { p.style.width = 0; });
-}
-
 const skillObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            showProgress();
-        } else {
-            hideProgress();
+            const progressBar = entry.target.querySelector('.skill-fill');
+            if (progressBar) {
+                progressBar.style.width = progressBar.getAttribute('data-width');
+            }
         }
     });
 });
 
-if (skillSection) {
-    skillObserver.observe(skillSection);
-}
+const skillBoxes = document.querySelectorAll('.skill-box');
+skillBoxes.forEach(box => skillObserver.observe(box));
