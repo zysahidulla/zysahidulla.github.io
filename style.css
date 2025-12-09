@@ -104,7 +104,7 @@ header {
     display: flex;
     align-items: center;
     position: relative;
-    padding-top: 60px; /* Offset for fixed nav */
+    padding-top: 100px; /* **Increased offset for fixed nav** */
 }
 
 .hero-layout {
