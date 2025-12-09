@@ -17,7 +17,7 @@ const typeEffect = () => {
     let typeSpeed = isDeleting ? 50 : 100;
 
     if (!isDeleting && charIndex === currentRole.length) {
-        typeSpeed = 2000; // Pause
+        typeSpeed = 5000; // Pause
         isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
