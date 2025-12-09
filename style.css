@@ -100,7 +100,7 @@ nav {
 
 /* HERO SECTION */
 header {
-    height: 100vh;
+    height: 85vh;
     display: flex;
     align-items: center;
     position: relative;
@@ -111,80 +111,113 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 40px;
 }
 
-/* Left Content */
-.hero-content {
-    flex: 1;
+.hero-left {
+    flex: 1.1;
     z-index: 2;
 }
 
-.greet {
-    font-size: 1.5rem;
-    color: var(--text-muted);
-    font-weight: 400;
-}
-
-.name {
-    font-size: 4rem;
-    font-weight: 700;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 10px 0;
-}
-
-.typing-wrapper {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-.typing-text { color: var(--text-color); }
-.cursor { color: var(--primary); animation: blink 1s infinite; }
-
-.description {
-    color: var(--text-muted);
-    max-width: 500px;
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-
-.socials a {
-    color: var(--text-color);
-    font-size: 1.5rem;
-    margin-right: 20px;
-    transition: 0.3s;
-}
-.socials a:hover { color: var(--primary); transform: translateY(-3px); display: inline-block;}
-
-/* Right Image Area */
-.hero-image-wrapper {
+.hero-right {
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
     position: relative;
 }
 
-/* The Glowing Background Blob */
+.greet {
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero-title {
+    font-size: 6.5rem;
+    line-height: 0.85;
+    font-weight: 800;
+    color: var(--text-color);
+    margin: 12px 0 20px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+
+.hero-sub {
+    color: var(--text-muted);
+    max-width: 650px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.typing-wrapper { font-size: 1.25rem; margin-bottom: 14px; }
+.typing-text { color: var(--text-color); }
+.cursor { color: var(--primary); animation: blink 1s infinite; }
+
+.hero-actions { display:flex; gap:18px; margin-bottom: 30px; }
+
+.btn-outline{
+    padding: 8px 20px;
+    border-radius: 20px;
+    color: var(--text-color);
+    border: 2px solid rgba(255,255,255,0.06);
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.btn-outline:hover{ transform: scale(1.03); box-shadow: 0 0 12px rgba(0,0,0,0.4); }
+
+.hero-stats{
+    margin-top: 30px;
+    display:flex;
+    gap: 28px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.stat-item{ display:flex; flex-direction:column; align-items:center; gap:8px; color:var(--text-muted); }
+.stat-icon{ background:#0f0f0f; color:var(--text-color); width:76px; height:76px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; box-shadow: inset 0 -6px 0 rgba(0,0,0,0.2); }
+.stat-text{ font-size:0.9rem; }
+
+/* The Glowing Background Blob (slightly repositioned) */
 .gradient-blob {
     position: absolute;
-    width: 400px;
-    height: 400px;
+    width: 480px;
+    height: 480px;
     background: var(--gradient);
     border-radius: 50%;
-    filter: blur(80px); /* Makes it glow */
-    opacity: 0.4;
+    filter: blur(110px);
+    opacity: 0.32;
     z-index: 0;
     animation: pulse 5s infinite alternate;
+    right: -60px;
+    top: -40px;
 }
 
-.hero-img {
+.image-frame{
     position: relative;
-    z-index: 1;
-    max-height: 550px;
-    width: auto;
-    /* Optional: Slight shadow on the image itself */
-    filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
+    width: 420px;
+    height: 480px;
+    border-radius: 40px;
+    overflow: hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
 }
+
+.image-frame .hero-img{ max-height:100%; width:auto; display:block; }
+
+.experience-badge{ position:absolute; left: -10px; top: 40px; background: var(--card-bg); color:var(--text-color); padding:12px 20px; border-radius:30px; display:flex; align-items:center; gap:10px; z-index:2; box-shadow: 0 6px 20px rgba(0,0,0,0.5); }
+.experience-badge span{ font-weight:800; font-size:1.4rem; color:var(--primary); }
+.experience-badge small{ display:block; color:var(--text-muted); font-size:0.7rem; }
+
+.hero-img{ position: relative; z-index:1; max-height:520px; width:auto; }
 
 /* SECTIONS (Generic) */
 section { padding: 80px 0; }
@@ -220,6 +253,24 @@ section { padding: 80px 0; }
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+/* About Section (two-column) */
+.about-section-grid {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-text { flex: 1; max-width: 680px; }
+.small-title { color: var(--primary); font-weight: 600; margin-bottom: 10px; }
+.about-heading { font-size: 2rem; color: var(--text-color); margin-bottom: 18px; }
+.about-paragraph { color: var(--text-muted); line-height: 1.8; margin-bottom: 20px; }
+.about-list { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; color: var(--text-muted); margin-bottom: 20px; }
+.about-list li { display:flex; align-items:center; gap:10px; }
+
+.about-image-wrapper { flex: 1; display:flex; justify-content:center; }
 
 /* SKILLS */
 .skills-wrapper { max-width: 700px; }
