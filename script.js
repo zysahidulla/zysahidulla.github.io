@@ -1,13 +1,6 @@
-// 1. Typing Animation Logic
+// 1. Typing Animation
 const typingText = document.querySelector(".typing-text");
-const roles = [
-    "Programmer.", 
-    "Web Designer", 
-    "UI/UX Designer.", 
-    "Prompt Engineer.", 
-    "Computer Engineer."
-];
-
+const roles = ["Web Designer", "Programmer", "UI/UX Designer", "Prompt Engineer"];
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -24,7 +17,7 @@ const typeEffect = () => {
     let typeSpeed = isDeleting ? 50 : 100;
 
     if (!isDeleting && charIndex === currentRole.length) {
-        typeSpeed = 2000; // Pause at end of word
+        typeSpeed = 2000;
         isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
@@ -34,12 +27,9 @@ const typeEffect = () => {
 
     setTimeout(typeEffect, typeSpeed);
 }
-
-// Start typing on load
 typeEffect();
 
-
-// 2. Scroll Animation (Fade in Elements)
+// 2. Scroll Animation (Fade In)
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -51,8 +41,7 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll(".hidden");
 hiddenElements.forEach((el) => observer.observe(el));
 
-
-// 3. Skill Bar Animation (Fills when scrolled to)
+// 3. Skill Bar Animation
 const skillSection = document.getElementById('skills');
 const progressBars = document.querySelectorAll('.skill-per');
 
@@ -64,12 +53,9 @@ const showProgress = () => {
 }
 
 const hideProgress = () => {
-    progressBars.forEach(p => {
-        p.style.width = 0;
-    });
+    progressBars.forEach(p => { p.style.width = 0; });
 }
 
-// Trigger skill animation
 const skillObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {

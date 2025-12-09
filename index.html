@@ -3,152 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Creative Developer</title>
+    <title>Zy Sahidulla | Web Designer</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <nav>
-        <div class="logo">ZY<span class="dot">.</span></div>
+        <div class="logo"><i class="fas fa-bear"></i> WEB <span>DESIGNER</span></div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact" class="btn">Contact Me</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Portfolio</a></li>
+            <li><a href="#contact" class="btn-primary">Contact Us</a></li>
         </ul>
+        <a href="#" class="btn-secondary"><i class="fas fa-download"></i> Download CV</a>
     </nav>
 
     <header id="home">
-        <div class="hero-content">
-            <h3>Hello, I am</h3>
-            <h1 class="glitch-name">Zy Sahidulla</h1>
-            <p>I am a <span class="typing-text"></span><span class="cursor">|</span></p>
-            <div class="socials">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+        <div class="hero-container">
+            <div class="big-text-bg">
+                <h1>WEB</h1>
+                <h1>DESIGNER</h1>
+            </div>
+
+            <div class="hero-content">
+                <p class="subtitle">WE CREATE WEBSITE FOR YOU</p>
+                <h2 class="name-reveal">I am <span class="typing-text"></span><span class="cursor">|</span></h2>
+                
+                <p class="description">
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                </p>
+                
+                <div class="cta-group">
+                    <a href="#contact" class="btn-primary">Contact Us <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="hero-image-wrapper">
+                <img src="https://via.placeholder.com/600x800.png?text=Your+Photo+Here" alt="Zy Sahidulla" class="hero-img">
+                
+                <div class="floating-card review-card">
+                    <div class="stars">
+                        <span>4.5</span>
+                        <div class="star-icons">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p>89k+ Total Review</p>
+                </div>
             </div>
         </div>
-        <div class="circle c1"></div>
-        <div class="circle c2"></div>
+
+        <div class="stats-bar hidden">
+            <div class="stat-item">
+                <div class="icon-circle"><i class="fas fa-smile"></i></div>
+                <div class="stat-text">
+                    <h3>4830</h3>
+                    <p>Happy Customer</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="icon-circle"><i class="fas fa-trophy"></i></div>
+                <div class="stat-text">
+                    <h3>90+</h3>
+                    <p>Award Win</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="icon-circle"><i class="fas fa-briefcase"></i></div>
+                <div class="stat-text">
+                    <h3>3065</h3>
+                    <p>Successful Project</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="icon-circle"><i class="fas fa-certificate"></i></div>
+                <div class="stat-text">
+                    <h3>20+</h3>
+                    <p>Year Experience</p>
+                </div>
+            </div>
+        </div>
     </header>
 
     <section id="about" class="hidden">
-        <h2 class="section-title">Who Am I?</h2>
-        <div class="about-container">
-            <div class="about-card">
-                <i class="fas fa-brain"></i>
-                <h3>Problem Solver</h3>
-                <p>I don't just write code; I fix complex logic puzzles. I approach every bug as a challenge to be conquered.</p>
+        <div class="about-wrapper">
+            <div class="about-text">
+                <p class="section-subtitle">About Us</p>
+                <h2 class="section-title">Are you looking for creative design? Let me help you!</h2>
+                <p class="about-desc">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    I approach every bug as a challenge to be conquered.
+                </p>
+                
+                <div class="checklist">
+                    <ul>
+                        <li><i class="fas fa-check-square"></i> Problem Solver & Logic Fixer</li>
+                        <li><i class="fas fa-check-square"></i> Creative Designer (UI/UX)</li>
+                        <li><i class="fas fa-check-square"></i> Modern Tech Stack (React, Python)</li>
+                        <li><i class="fas fa-check-square"></i> Prompt Engineering Specialist</li>
+                    </ul>
+                </div>
+
+                <a href="#about" class="btn-primary" style="margin-top: 20px;">More About <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="about-card">
-                <i class="fas fa-palette"></i>
-                <h3>Creative Designer</h3>
-                <p>Bridging the gap between engineering and art. I care about how the software feels as much as how it works.</p>
-            </div>
-            <div class="about-card">
-                <i class="fas fa-rocket"></i>
-                <h3>Innovator</h3>
-                <p>Constantly learning new technologies like AI Prompt Engineering to stay ahead of the curve.</p>
+
+            <div class="about-image">
+                <div class="green-shape">
+                    <div class="exp-badge">
+                        <h3>20+</h3>
+                        <p>Year Of <br>Experience</p>
+                    </div>
+                    <img src="https://via.placeholder.com/500x600.png?text=Casual+Photo" alt="About Me">
+                </div>
             </div>
         </div>
     </section>
 
     <section id="skills" class="hidden">
-        <h2 class="section-title">My Stats</h2>
-        <div class="skills-container">
-            
-            <div class="skill-box">
-                <div class="skill-title">
-                    <div class="img"><i class="fab fa-python"></i></div>
-                    <h3>Python</h3>
+        <div class="container">
+            <h2 class="section-title center">My Tech Stack</h2>
+            <div class="skills-container">
+                <div class="skill-box">
+                    <div class="skill-title">
+                        <div class="img"><i class="fab fa-python"></i></div>
+                        <h3>Python</h3>
+                    </div>
+                    <div class="skill-bar">
+                        <span class="skill-per" data-width="90%"></span>
+                    </div>
                 </div>
-                <div class="skill-bar">
-                    <span class="skill-per" data-width="90%">
-                        <span class="tooltip">90%</span>
-                    </span>
+                <div class="skill-box">
+                    <div class="skill-title">
+                        <div class="img"><i class="fab fa-java"></i></div>
+                        <h3>Java</h3>
+                    </div>
+                    <div class="skill-bar">
+                        <span class="skill-per" data-width="85%"></span>
+                    </div>
                 </div>
-            </div>
-
-            <div class="skill-box">
-                <div class="skill-title">
-                    <div class="img"><i class="fab fa-java"></i></div>
-                    <h3>Java</h3>
+                 <div class="skill-box">
+                    <div class="skill-title">
+                        <div class="img"><i class="fas fa-database"></i></div>
+                        <h3>SQL</h3>
+                    </div>
+                    <div class="skill-bar">
+                        <span class="skill-per" data-width="80%"></span>
+                    </div>
                 </div>
-                <div class="skill-bar">
-                    <span class="skill-per" data-width="85%">
-                        <span class="tooltip">85%</span>
-                    </span>
-                </div>
-            </div>
-
-            <div class="skill-box">
-                <div class="skill-title">
-                    <div class="img"><i class="fas fa-database"></i></div>
-                    <h3>SQL</h3>
-                </div>
-                <div class="skill-bar">
-                    <span class="skill-per" data-width="80%">
-                        <span class="tooltip">80%</span>
-                    </span>
-                </div>
-            </div>
-
-            <div class="skill-box">
-                <div class="skill-title">
-                    <div class="img"><i class="fab fa-php"></i></div>
-                    <h3>PHP</h3>
-                </div>
-                <div class="skill-bar">
-                    <span class="skill-per" data-width="75%">
-                        <span class="tooltip">75%</span>
-                    </span>
-                </div>
-            </div>
-
-             <div class="skill-box">
-                <div class="skill-title">
-                    <div class="img"><i class="fas fa-code"></i></div>
-                    <h3>C++</h3>
-                </div>
-                <div class="skill-bar">
-                    <span class="skill-per" data-width="70%">
-                        <span class="tooltip">70%</span>
-                    </span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="projects" class="hidden">
-        <h2 class="section-title">My Projectss</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <div class="overlay"></div>
-                <h3>AI Chatbot</h3>
-                <p>A Python-based NLP model.</p>
-                <button>View Code</button>
-            </div>
-            <div class="project-card">
-                <div class="overlay"></div>
-                <h3>E-Commerce UI</h3>
-                <p>Modern UX design with React.</p>
-                <button>View Code</button>
-            </div>
-            <div class="project-card">
-                <div class="overlay"></div>
-                <h3>Data Analysis Tool</h3>
-                <p>SQL & PowerBI Integration.</p>
-                <button>View Code</button>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>Designed & Built by <span>Your Name</span> | © 2024</p>
+        <p>Designed & Built by <span>Zy Sahidulla</span> | © 2024</p>
     </footer>
 
     <script src="script.js"></script>
