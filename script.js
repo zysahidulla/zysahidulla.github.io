@@ -1,11 +1,11 @@
 // 1. Typing Animation Logic
 const typingText = document.querySelector(".typing-text");
 const roles = [
-    "Programmer", 
-    "Software Engineer", 
-    "UI/UX Designer", 
-    "Prompt Engineer", 
-    "Computer Engineer"
+    "Programmer.", 
+    "Web Designer", 
+    "UI/UX Designer.", 
+    "Prompt Engineer.", 
+    "Computer Engineer."
 ];
 
 let roleIndex = 0;
