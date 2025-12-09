@@ -1,57 +1,65 @@
-// 1. Typing Animation
+/* -------------------------------------------------------------
+    1. TYPING ANIMATION
+--------------------------------------------------------------*/
+
 const typingText = document.querySelector(".typing-text");
 const roles = ["Programmer", "Web Designer", "Prompt Engineer"];
-let roleIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
+let idx = 0;
+let char = 0;
+let deleting = false;
 
-const typeEffect = () => {
-    const currentRole = roles[roleIndex];
-    
-    if (isDeleting) {
-        typingText.textContent = currentRole.substring(0, charIndex--);
+function typeEffect() {
+    const current = roles[idx];
+
+    if (deleting) {
+        typingText.textContent = current.substring(0, char--);
     } else {
-        typingText.textContent = currentRole.substring(0, charIndex++);
+        typingText.textContent = current.substring(0, char++);
     }
 
-    let typeSpeed = isDeleting ? 50 : 100;
+    let speed = deleting ? 50 : 100;
 
-    if (!isDeleting && charIndex === currentRole.length) {
-        typeSpeed = 5000; // Pause
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        typeSpeed = 500;
+    if (!deleting && char === current.length) {
+        speed = 2000;
+        deleting = true;
     }
 
-    setTimeout(typeEffect, typeSpeed);
+    if (deleting && char === 0) {
+        deleting = false;
+        idx = (idx + 1) % roles.length;
+        speed = 400;
+    }
+
+    setTimeout(typeEffect, speed);
 }
+
 typeEffect();
 
-// 2. Scroll Animation (Fade In)
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
+/* -------------------------------------------------------------
+    2. FADE-IN SCROLL ANIMATION
+--------------------------------------------------------------*/
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
     });
 });
 
-const hiddenElements = document.querySelectorAll(".hidden");
-hiddenElements.forEach((el) => observer.observe(el));
+document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
 
-// 3. Skill Bar Animation
-const skillObserver = new IntersectionObserver((entries) => {
+/* -------------------------------------------------------------
+    3. SKILL BAR ANIMATION
+--------------------------------------------------------------*/
+
+const skillObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const progressBar = entry.target.querySelector('.skill-fill');
-            if (progressBar) {
-                progressBar.style.width = progressBar.getAttribute('data-width');
-            }
+            const bar = entry.target.querySelector(".skill-fill");
+            if (bar) bar.style.width = bar.getAttribute("data-width");
         }
     });
 });
 
-const skillBoxes = document.querySelectorAll('.skill-box');
-skillBoxes.forEach(box => skillObserver.observe(box));
+document.querySelectorAll(".skill-box").forEach(box =>
+    skillObserver.observe(box)
+);

@@ -1,39 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zy Sahidulla | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
+
 <body>
 
-    <nav>
-        <div class="logo">ZY<span class="dot">.</span>SAHIDULLA</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact" class="btn-gradient">Contact</a></li>
-        </ul>
+    <!-- ============================
+         NAVIGATION
+    ============================= -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">ZY<span class="dot">.</span>SAHIDULLA</div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact" class="btn-gradient">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <header id="home">
+    <!-- ============================
+         HERO SECTION
+    ============================= -->
+    <header id="home" class="hero">
         <div class="container hero-layout">
 
+            <!-- LEFT SIDE -->
             <div class="hero-left">
-                <p class="greet">WELCOME! I am </p>
-                <h1 class="hero-title">ZY<br>SAHIDULLA</h1>
+                <p class="greet">WELCOME! I am</p>
 
-                <h2 class="typing-wrapper">I am a <span class="typing-text"></span><span class="cursor">|</span></h2>
+                <h1 class="hero-title">
+                    ZY <br /> SAHIDULLA
+                </h1>
 
-                <p class="hero-sub">Blending design and logic: I leverage my Computer Engineering background to develop high-performance web applications, driven by a passion for clean UI/UX and elegant functionality.</p>
+                <h2 class="typing-wrapper">
+                    I am a <span class="typing-text"></span><span class="cursor">|</span>
+                </h2>
+
+                <p class="hero-sub">
+                    Blending design and logic: I leverage my Computer Engineering background 
+                    to develop high-performance web applications, driven by a passion for clean 
+                    UI/UX and elegant functionality.
+                </p>
 
                 <div class="hero-actions">
-                    <a class="btn-gradient" href="#contact">Contact Us</a>
-                    <a class="btn-outline" href="#projects">View Projects</a>
+                    <a href="#contact" class="btn-gradient">Contact Us</a>
+                    <a href="#projects" class="btn-outline">View Projects</a>
                 </div>
 
                 <div class="hero-stats">
@@ -41,18 +64,22 @@
                         <div class="stat-icon">4830</div>
                         <div class="stat-text">Happy Customer</div>
                     </div>
+
                     <div class="stat-item">
                         <div class="stat-icon">90+</div>
                         <div class="stat-text">Award Win</div>
                     </div>
+
                     <div class="stat-item">
                         <div class="stat-icon">10+</div>
                         <div class="stat-text">Successful Projects</div>
                     </div>
+
                     <div class="stat-item">
                         <div class="stat-icon">3</div>
                         <div class="stat-text">Year of Experience</div>
                     </div>
+
                     <div class="stat-item">
                         <div class="stat-icon">90%</div>
                         <div class="stat-text">Satisfaction Rate</div>
@@ -60,50 +87,82 @@
                 </div>
             </div>
 
+            <!-- RIGHT SIDE -->
             <div class="hero-right">
                 <div class="gradient-blob"></div>
+
                 <div class="image-frame">
-                    <img src="https://via.placeholder.com/500x700.png?text=Your+Photo" alt="Zy Sahidulla" class="hero-img">
-                    <div class="experience-badge"><span>20+</span><small>Year Of Experience</small></div>
+                    <img src="https://via.placeholder.com/500x700.png?text=Your+Photo"
+                         alt="Zy Sahidulla"
+                         class="hero-img" />
+
+                    <div class="experience-badge">
+                        <span>20+</span>
+                        <small>Year Of Experience</small>
+                    </div>
                 </div>
             </div>
 
         </div>
     </header>
 
+    <!-- ============================
+         ABOUT SECTION
+    ============================= -->
     <section id="about" class="hidden">
         <div class="container about-section-grid">
+
             <div class="about-text">
                 <h4 class="small-title">About Us</h4>
-                <h2 class="about-heading">Are you looking for creative design? Let me help you!</h2>
-                <p class="about-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+
+                <h2 class="about-heading">
+                    Are you looking for creative design? Let me help you!
+                </h2>
+
+                <p class="about-paragraph">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting 
+                    industry. Lorem Ipsum has been the industry's standard dummy text 
+                    ever since the 1500s.
+                </p>
 
                 <ul class="about-list">
-                    <li><i class="fas fa-check-circle" style="color:var(--primary)"></i> Lorem ipsum dolor sit amet.</li>
-                    <li><i class="fas fa-check-circle" style="color:var(--primary)"></i> Lorem ipsum dolor sit amet.</li>
-                    <li><i class="fas fa-check-circle" style="color:var(--primary)"></i> Lorem ipsum dolor sit amet.</li>
+                    <li><i class="fas fa-check-circle"></i> Lorem ipsum dolor sit amet.</li>
+                    <li><i class="fas fa-check-circle"></i> Lorem ipsum dolor sit amet.</li>
+                    <li><i class="fas fa-check-circle"></i> Lorem ipsum dolor sit amet.</li>
                 </ul>
 
-                <a class="btn-gradient" href="#more">More About</a>
+                <a href="#more" class="btn-gradient">More About</a>
             </div>
 
             <div class="about-image-wrapper">
                 <div class="image-frame">
-                    <img src="https://via.placeholder.com/500x700.png?text=Your+Photo" alt="Zy Sahidulla" class="hero-img">
-                    <div class="experience-badge"><span>20+</span><small>Year Of Experience</small></div>
+                    <img src="https://via.placeholder.com/500x700.png?text=Your+Photo"
+                         alt="Zy Sahidulla"
+                         class="hero-img" />
+
+                    <div class="experience-badge">
+                        <span>20+</span>
+                        <small>Year Of Experience</small>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
 
+    <!-- ============================
+         SKILLS SECTION
+    ============================= -->
     <section id="skills" class="hidden">
-        <h2 class="section-title">My <span class="text-gradient">Skills</span></h2>
+        <h2 class="section-title">
+            My <span class="text-gradient">Skills</span>
+        </h2>
+
         <div class="container skills-wrapper">
-            
+
             <div class="skill-box">
                 <div class="skill-info">
-                    <p>Python</p>
-                    <p>90%</p>
+                    <p>Python</p><p>90%</p>
                 </div>
                 <div class="skill-bar">
                     <span class="skill-fill gradient-bg" data-width="90%"></span>
@@ -112,8 +171,7 @@
 
             <div class="skill-box">
                 <div class="skill-info">
-                    <p>Java</p>
-                    <p>85%</p>
+                    <p>Java</p><p>85%</p>
                 </div>
                 <div class="skill-bar">
                     <span class="skill-fill gradient-bg" data-width="85%"></span>
@@ -122,8 +180,7 @@
 
             <div class="skill-box">
                 <div class="skill-info">
-                    <p>SQL</p>
-                    <p>80%</p>
+                    <p>SQL</p><p>80%</p>
                 </div>
                 <div class="skill-bar">
                     <span class="skill-fill gradient-bg" data-width="80%"></span>
@@ -133,31 +190,46 @@
         </div>
     </section>
 
+    <!-- ============================
+         PROJECTS SECTION
+    ============================= -->
     <section id="projects" class="hidden">
-        <h2 class="section-title">My <span class="text-gradient">Projects</span></h2>
+        <h2 class="section-title">
+            My <span class="text-gradient">Projects</span>
+        </h2>
+
         <div class="container project-grid">
+
             <div class="project-card">
                 <h3>AI Chatbot</h3>
                 <p>Python-based NLP model.</p>
-                <a href="#" class="link-text">View Code &rarr;</a>
+                <a href="#" class="link-text">View Code →</a>
             </div>
+
             <div class="project-card">
                 <h3>E-Commerce UI</h3>
                 <p>Modern UX design with React.</p>
-                <a href="#" class="link-text">View Code &rarr;</a>
+                <a href="#" class="link-text">View Code →</a>
             </div>
+
             <div class="project-card">
                 <h3>Data Tool</h3>
                 <p>SQL & PowerBI Integration.</p>
-                <a href="#" class="link-text">View Code &rarr;</a>
+                <a href="#" class="link-text">View Code →</a>
             </div>
+
         </div>
     </section>
 
+    <!-- ============================
+         FOOTER
+    ============================= -->
     <footer>
         <p>Built by <span>Zy Sahidulla</span> | © 2024</p>
     </footer>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
+
 </body>
 </html>
