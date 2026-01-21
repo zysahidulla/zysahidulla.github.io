@@ -11,11 +11,11 @@ const Footer = () => {
             className="font-display text-xl font-bold text-gradient-primary"
             whileHover={{ scale: 1.05 }}
           >
-            &lt;DEV/&gt;
+            &lt;zy.sahidulla&gt;
           </motion.a>
 
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Designed & Built with <Heart className="w-4 h-4 text-primary fill-primary" /> by Your Name
+            Designed & Built by Zy Sahidulla
           </p>
 
           <p className="text-sm text-muted-foreground">
