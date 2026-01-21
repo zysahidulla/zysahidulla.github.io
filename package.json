@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && npm run copy:docs && npm run setup:docs",
-    "copy:docs": "copyfiles -u 1 'dist/**/*' docs/",
+    "copy:docs": "node -e \"const fs=require('fs'); const path=require('path'); function copy(src,dst){if(!fs.existsSync(dst))fs.mkdirSync(dst,{recursive:true});fs.readdirSync(src).forEach(f=>{const s=path.join(src,f);const d=path.join(dst,f);if(fs.lstatSync(s).isDirectory())copy(s,d);else fs.copyFileSync(s,d);});}; copy('dist','docs');\"",
     "setup:docs": "node -e \"require('fs').writeFileSync('docs/.nojekyll', '')\"",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
