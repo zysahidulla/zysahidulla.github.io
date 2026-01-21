@@ -11,7 +11,7 @@ const Footer = () => {
             className="font-display text-xl font-bold text-gradient-primary"
             whileHover={{ scale: 1.05 }}
           >
-            &lt;zy.sahidulla&gt;
+            zy.sahidulla
           </motion.a>
 
           <p className="text-sm text-muted-foreground flex items-center gap-1">
