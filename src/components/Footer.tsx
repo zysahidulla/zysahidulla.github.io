@@ -15,7 +15,7 @@ const Footer = () => {
           </motion.a>
 
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Designed & Built by Zy Sahidulla
+            Designed & Built by Zy Sahidullaa
           </p>
 
           <p className="text-sm text-muted-foreground">
