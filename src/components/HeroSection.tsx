@@ -87,7 +87,7 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Description */}
-          <motion.p variants={itemVariants} className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 line-clamp-none">I'm a passionate student, currently taking BS in Computer Engineering who combines creativity with technology to build innovative digital experiences.</motion.p>
+          <motion.p variants={itemVariants} className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 line-clamp-none">I don’t just write code—I design experiences where creativity and engineering collide.</motion.p>
 
           {/* CTA Buttons */}
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
