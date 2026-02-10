@@ -86,6 +86,29 @@ const HeroSection = () => {
               </motion.span>)}
           </motion.div>
 
+          {/* Profile Picture */}
+          <motion.div variants={itemVariants} className="my-12 flex justify-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              whileHover={{ scale: 1.05 }}
+              className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-2 border-primary/30 shadow-2xl hover:shadow-primary/20 transition-shadow duration-300"
+            >
+              {/* Animated gradient border glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-primary rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300 animate-spin" style={{ animationDuration: '3s' }} />
+              
+              {/* Image container */}
+              <div className="absolute inset-1 rounded-full bg-black/20 backdrop-blur-sm overflow-hidden">
+                <img 
+                  src="/profile.jpg" 
+                  alt="Zy Sahidulla" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+
           {/* Description */}
           <motion.p variants={itemVariants} className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 line-clamp-none">I don’t just write code—I design experiences where creativity and engineering collide.</motion.p>
 
