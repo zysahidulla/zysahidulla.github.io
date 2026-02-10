@@ -53,78 +53,57 @@ const AboutSection = () => {
             About Me
           </span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
-            My Journey & Background
+            My Journey & Background 
           </h2>
         </motion.div>
 
         {/* --- NEW BIO & PHOTO SECTION --- */}
-        {/* --- AESTHETIC BIO & PHOTO SECTION --- */}
-        <div className="grid lg:grid-cols-12 gap-16 mb-32 items-center">
-          
-          {/* Left Side: Glowing Photo Orbit */}
+        <div className="grid lg:grid-cols-12 gap-12 mb-24 items-center">
+          {/* Photo Column */}
           <motion.div 
-            className="lg:col-span-5 relative flex justify-center"
-            initial={{ opacity: 0, x: -20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 1 }}
+            className="lg:col-span-5 flex justify-center"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.8 }}
           >
-            {/* Background Glows */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
-            
-            <div className="relative p-2">
-              {/* The "Orbit" Ring - Matches your image */}
-              <div className="absolute inset-0 rounded-full border border-primary/20 scale-110 animate-[spin_10s_linear_infinite]" />
-              <div className="absolute inset-0 rounded-full border-t-2 border-primary/60 scale-110 blur-[2px] animate-[spin_3s_linear_infinite]" />
+            <div className="relative group">
+              {/* Decorative Animated Ring */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
               
-              <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full p-1 bg-gradient-to-tr from-primary via-purple-500 to-transparent shadow-[0_0_50px_rgba(var(--primary-rgb),0.2)]">
-                <div className="w-full h-full rounded-full overflow-hidden bg-[#0a0a0c] border-4 border-[#0a0a0c]">
-                  <img 
-                    src="/your-photo.jpg" 
-                    alt="Profile" 
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 hover:scale-100"
-                  />
-                </div>
+              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-background glass-card shadow-2xl">
+                <img 
+                  src="photo.jpg" // REPLACE WITH YOUR IMAGE PATH
+                  alt="Profile" 
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                />
               </div>
             </div>
           </motion.div>
 
-          {/* Right Side: Dark Info Grid */}
+          {/* Bio Info Column */}
           <motion.div 
             className="lg:col-span-7"
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="mb-8">
-               <span className="text-primary font-mono text-xs tracking-widest uppercase mb-2 block">Who am I?</span>
-               <h3 className="text-4xl md:text-5xl font-bold font-display text-white">About Me</h3>
-            </div>
-
-            <h4 className="text-lg font-semibold mb-6 text-white/90">Personal Information</h4>
-            
-            <div className="grid sm:grid-cols-2 gap-4">
+            <h3 className="text-2xl font-bold mb-6 font-display">Personal Information</h3>
+            <div className="grid sm:grid-cols-2 gap-6">
               {bioInfo.map((info, i) => (
-                <motion.div 
-                  key={i} 
-                  whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.05)" }}
-                  className="flex items-center gap-4 p-5 rounded-2xl bg-[#0f0f13]/80 border border-white/5 backdrop-blur-md transition-all"
-                >
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary shadow-[0_0_15px_rgba(var(--primary-rgb),0.1)]">
-                    <info.icon size={22} />
+                <div key={i} className="flex items-center gap-4 p-4 glass-card rounded-xl border border-white/5">
+                  <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                    <info.icon size={20} />
                   </div>
-                  <div className="flex flex-col">
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-bold mb-0.5">
-                      {info.label}
-                    </span>
-                    <span className="text-sm md:text-base font-medium text-white/90">
-                      {info.value}
-                    </span>
+                  <div>
+                    <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold">{info.label}</p>
+                    <p className="text-foreground font-medium">{info.value}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </motion.div>
         </div>
+        {/* --- END NEW SECTION --- */}
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left side - Narrative */}
