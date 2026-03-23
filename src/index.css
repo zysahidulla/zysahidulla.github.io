@@ -267,3 +267,22 @@ a, button, [role="button"], input[type="submit"], .hover-lift {
   background: hsl(var(--primary) / 0.3);
   color: hsl(var(--foreground));
 }
+
+/* Print styles for CV */
+@media print {
+  body {
+    background: white !important;
+    color: #1a1a1a !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  @page {
+    margin: 0.5in;
+    size: letter;
+  }
+
+  .print\:hidden {
+    display: none !important;
+  }
+}

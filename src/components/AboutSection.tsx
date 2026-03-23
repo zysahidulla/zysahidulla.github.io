@@ -5,7 +5,7 @@ import { Code2, Palette, Cpu, Sparkles, MapPin, Calendar, GraduationCap, Mail } 
 const specializations = [
   {
     icon: Code2,
-    title: 'Software Engineering',
+    title: 'Web Development',
     description: 'Building robust, scalable applications with clean architecture and modern technologies.',
   },
   {

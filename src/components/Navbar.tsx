@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { FileText } from 'lucide-react';
 const navItems = [{
   name: 'Home',
   href: '#home'
@@ -66,13 +68,20 @@ const Navbar = () => {
             </li>)}
         </ul>
 
-        <motion.a href="#contact" className="hidden md:block px-5 py-2 rounded-full glass-card border-gradient text-sm font-medium text-primary hover:glow-primary transition-all duration-300" whileHover={{
-        scale: 1.05
-      }} whileTap={{
-        scale: 0.95
-      }}>
-          Let's Talk
-        </motion.a>
+        <div className="hidden md:flex items-center gap-3">
+          <Link to="/cv">
+            <motion.span className="flex items-center gap-1.5 px-4 py-2 rounded-full glass-card border-gradient text-sm font-medium text-foreground hover:text-primary transition-all duration-300" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <FileText size={14} /> CV
+            </motion.span>
+          </Link>
+          <motion.a href="#contact" className="px-5 py-2 rounded-full glass-card border-gradient text-sm font-medium text-primary hover:glow-primary transition-all duration-300" whileHover={{
+            scale: 1.05
+          }} whileTap={{
+            scale: 0.95
+          }}>
+            Let's Talk
+          </motion.a>
+        </div>
 
         {/* Mobile menu button */}
         <button className="md:hidden text-foreground">

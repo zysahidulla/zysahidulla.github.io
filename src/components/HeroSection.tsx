@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 
-const roles = ['Software Engineer', 'Computer Engineer', 'UI/UX Designer', 'Prompt Engineer'];
+const roles = ['Web Developer', 'Computer Engineer', 'UI/UX Designer', 'Prompt Engineer'];
 
 const containerVariants = {
   hidden: { opacity: 0 },
