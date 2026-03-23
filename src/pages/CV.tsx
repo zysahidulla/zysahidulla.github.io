@@ -8,7 +8,7 @@ const personalInfo = {
   email: 'zysahidulla@gmail.com',
   location: 'Manila, Philippines',
   summary:
-    'Passionate web developer and Computer Engineering student with 2+ years of experience building modern, responsive web applications. Skilled in React, TypeScript, and full-stack development with a strong eye for UI/UX design.',
+    'Passionate web developer and Computer Engineering student with 2+ years of experience building modern, responsive web applications. Skilled in HTML, CSS, JavaScript and full-stack development with a strong eye for UI/UX design.',
 };
 
 const education = [
