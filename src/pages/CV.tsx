@@ -1,5 +1,21 @@
 import { motion } from 'framer-motion';
-import { Download, ArrowLeft, Mail, MapPin, Phone, Github, Linkedin, ExternalLink } from 'lucide-react';
+import {
+  Download,
+  ArrowLeft,
+  Mail,
+  MapPin,
+  Github,
+  Star,
+  Trophy,
+  Crown,
+  Medal,
+  Award,
+  Sparkles,
+  Bot,
+  Code,
+  Palette,
+  Smartphone
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const personalInfo = {
@@ -8,7 +24,7 @@ const personalInfo = {
   email: 'zysahidulla@gmail.com',
   location: 'Manila, Philippines',
   summary:
-    'Passionate web developer and Computer Engineering student with 2+ years of experience building modern, responsive web applications. Skilled in React, TypeScript, and full-stack development with a strong eye for UI/UX design. Proven ability to deliver clean, scalable code and beautiful user interfaces.',
+    'Passionate web developer and Computer Engineering student with 2+ years of experience building modern, responsive web applications. Skilled in React, TypeScript, and full-stack development with a strong eye for UI/UX design.',
 };
 
 const education = [
@@ -39,49 +55,92 @@ const experience = [
     organization: 'De La Salle University',
     period: '2022 – 2023',
     bullets: [
-      'Served as liaison between students and faculty, improving communication.',
+      'Served as liaison between students and faculty.',
       'Led organization of class activities and academic support programs.',
     ],
   },
 ];
 
 const skills = {
-  'Languages': ['JavaScript', 'TypeScript', 'Python', 'Java', 'C++'],
-  'Frontend': ['React', 'Next.js', 'Vue.js', 'Tailwind CSS', 'HTML/CSS'],
+  Languages: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C++'],
+  Frontend: ['React', 'Next.js', 'Vue.js', 'Tailwind CSS', 'HTML/CSS'],
   'Backend & DB': ['Node.js', 'MongoDB', 'PostgreSQL'],
   'Tools & Design': ['Git', 'VS Code', 'Figma', 'Photoshop'],
 };
 
 const projects = [
   {
-    name: 'AI-Powered Task Manager',
-    tech: 'React, TypeScript, OpenAI, Node.js',
-    description: 'Full-stack task management app with AI-driven prioritization and smart suggestions.',
+    title: 'The Adoption Pawtal',
+    description:
+      'A PHP/MySQL-powered web platform that digitizes Philippine animal shelter operations by centralizing pet records, medical tracking, and adoption workflows.',
+    tags: ['SQL', 'PHP'],
+    icon: Bot,
   },
   {
-    name: 'E-Commerce Dashboard',
-    tech: 'Next.js, PostgreSQL, Chart.js, Stripe',
-    description: 'Admin dashboard with real-time analytics, payment integration, and inventory management.',
+    title: 'Digital Clock',
+    description:
+      'A digital clock with a living background that mirrors the real world, cycling through sunrise, midday, and starry night animations.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    icon: Code,
   },
   {
-    name: 'Design System Library',
-    tech: 'React, Storybook, TypeScript, Figma',
-    description: 'Reusable component library with comprehensive documentation and design tokens.',
+    title: 'A.R.T Money Changer Tracker',
+    description:
+      'A real-time financial dashboard that simplifies currency conversion and market tracking for USD, JPY, and PHP.',
+    tags: ['HTML', 'CSS', 'Figma', 'JavaScript'],
+    icon: Palette,
   },
   {
-    name: 'Mobile Fitness App',
-    tech: 'React Native, Firebase, TensorFlow',
-    description: 'Cross-platform fitness tracker with AI-based exercise form detection.',
+    title: 'Weather Analytics Dashboard',
+    description:
+      'A responsive web-based weather analytics dashboard visualizing real-time weather conditions, geographic data, and forecasts.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    icon: Smartphone,
   },
 ];
 
 const achievements = [
-  "Dean's List – Academic Excellence (2023)",
-  'Best UI/UX Design – 1st Place, University Hackathon (2023)',
-  'Leadership Award – Class Representative (2023)',
-  'Journalism Excellence – Outstanding Contributor (2022)',
-  'Academic Scholar (2020–2022)',
-  'Tech Competition Finalist – Regional Level (2022)',
+  {
+    title: 'Class Salutatorian',
+    description: 'Top 2 in the batch with academic excellence recognition',
+    icon: Star,
+    year: '2023',
+  },
+  {
+    title: 'With Honors',
+    description:
+      'Consistent honor student throughout Elementary and High School',
+    icon: Trophy,
+    year: '2013-2019',
+  },
+  {
+    title: 'With High Honors',
+    description:
+      'Consistent high honor student throughout Senior High School',
+    icon: Crown,
+    year: '2020-2023',
+  },
+  {
+    title: 'Journalism Excellence',
+    description:
+      'Outstanding contributor to school publications as the Managing Editor',
+    icon: Medal,
+    year: '2023',
+  },
+  {
+    title: 'Best in Conduct',
+    description:
+      'Maintained good conduct and discipline record throughout school years',
+    icon: Award,
+    year: '2019-2023',
+  },
+  {
+    title: 'Best in Computer Subject',
+    description:
+      'Best in Computer Subject in Grade School, showcasing early passion for technology',
+    icon: Sparkles,
+    year: '2016',
+  },
 ];
 
 const handlePrint = () => {
@@ -91,21 +150,22 @@ const handlePrint = () => {
 const CV = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Screen-only toolbar */}
-      <div className="print:hidden sticky top-0 z-50 glass border-b border-border">
-        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+      {/* Toolbar */}
+      <div className="print:hidden sticky top-0 z-50 border-b border-border">
+        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <Link
             to="/"
-            className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+            className="flex items-center gap-2 text-muted-foreground hover:text-foreground"
           >
             <ArrowLeft size={18} />
-            <span className="font-medium">Back to Portfolio</span>
+            Back to Portfolio
           </Link>
+
           <motion.button
             onClick={handlePrint}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm"
           >
             <Download size={16} />
             Download / Print CV
@@ -114,39 +174,42 @@ const CV = () => {
       </div>
 
       {/* CV Content */}
-      <div className="container mx-auto px-6 py-12 print:p-0">
+      <div className="container mx-auto px-6 py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-[850px] mx-auto bg-card print:bg-white rounded-2xl print:rounded-none shadow-2xl print:shadow-none overflow-hidden"
+          className="max-w-[850px] mx-auto bg-card rounded-2xl shadow-2xl overflow-hidden"
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-primary/20 to-purple-600/20 print:from-gray-100 print:to-gray-100 px-10 py-10 print:py-8 border-b border-border print:border-gray-300">
-            <h1 className="text-4xl print:text-3xl font-display font-bold text-foreground print:text-gray-900 mb-1">
-              {personalInfo.name}
-            </h1>
-            <p className="text-xl print:text-lg text-primary print:text-gray-700 font-semibold mb-4">
+          <div className="bg-gradient-to-r from-primary/20 to-purple-600/20 px-10 py-10 border-b">
+            <h1 className="text-4xl font-bold mb-1">{personalInfo.name}</h1>
+            <p className="text-xl text-primary font-semibold mb-4">
               {personalInfo.title}
             </p>
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground print:text-gray-600">
-              <span className="flex items-center gap-1.5">
-                <Mail size={14} /> {personalInfo.email}
+
+            <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
+              <span className="flex items-center gap-2">
+                <Mail size={14} />
+                {personalInfo.email}
               </span>
-              <span className="flex items-center gap-1.5">
-                <MapPin size={14} /> {personalInfo.location}
+
+              <span className="flex items-center gap-2">
+                <MapPin size={14} />
+                {personalInfo.location}
               </span>
-              <span className="flex items-center gap-1.5 print:hidden">
-                <Github size={14} /> github.com/zysahidulla
+
+              <span className="flex items-center gap-2">
+                <Github size={14} />
+                github.com/zysahidulla
               </span>
             </div>
           </div>
 
-          <div className="px-10 py-8 space-y-8 print:space-y-6 print:text-gray-800">
+          <div className="px-10 py-8 space-y-8">
             {/* Summary */}
             <section>
               <SectionTitle>Professional Summary</SectionTitle>
-              <p className="text-muted-foreground print:text-gray-700 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 {personalInfo.summary}
               </p>
             </section>
@@ -154,13 +217,11 @@ const CV = () => {
             {/* Skills */}
             <section>
               <SectionTitle>Technical Skills</SectionTitle>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 print:gap-2">
+              <div className="grid sm:grid-cols-2 gap-4">
                 {Object.entries(skills).map(([category, items]) => (
                   <div key={category}>
-                    <h4 className="font-semibold text-foreground print:text-gray-900 text-sm mb-1">
-                      {category}
-                    </h4>
-                    <p className="text-sm text-muted-foreground print:text-gray-600">
+                    <h4 className="font-semibold text-sm">{category}</h4>
+                    <p className="text-sm text-muted-foreground">
                       {items.join(' · ')}
                     </p>
                   </div>
@@ -171,87 +232,111 @@ const CV = () => {
             {/* Education */}
             <section>
               <SectionTitle>Education</SectionTitle>
-              <div className="space-y-4 print:space-y-3">
-                {education.map((edu, i) => (
-                  <div key={i} className="flex justify-between items-start gap-4">
-                    <div>
-                      <h4 className="font-semibold text-foreground print:text-gray-900">
-                        {edu.institution}
-                      </h4>
-                      <p className="text-sm text-muted-foreground print:text-gray-600">
-                        {edu.degree}
-                      </p>
-                    </div>
-                    <span className="text-sm text-muted-foreground print:text-gray-500 whitespace-nowrap">
-                      {edu.period}
-                    </span>
+              {education.map((edu, i) => (
+                <div key={i} className="flex justify-between">
+                  <div>
+                    <h4 className="font-semibold">{edu.institution}</h4>
+                    <p className="text-sm text-muted-foreground">
+                      {edu.degree}
+                    </p>
                   </div>
-                ))}
-              </div>
+                  <span className="text-sm text-muted-foreground">
+                    {edu.period}
+                  </span>
+                </div>
+              ))}
             </section>
 
             {/* Experience */}
             <section>
               <SectionTitle>Leadership & Experience</SectionTitle>
-              <div className="space-y-5 print:space-y-4">
-                {experience.map((exp, i) => (
-                  <div key={i}>
-                    <div className="flex justify-between items-start gap-4 mb-1">
-                      <div>
-                        <h4 className="font-semibold text-foreground print:text-gray-900">
-                          {exp.role}
-                        </h4>
-                        <p className="text-sm text-primary print:text-gray-600 font-medium">
-                          {exp.organization}
-                        </p>
-                      </div>
-                      <span className="text-sm text-muted-foreground print:text-gray-500 whitespace-nowrap">
-                        {exp.period}
-                      </span>
+              {experience.map((exp, i) => (
+                <div key={i} className="mb-4">
+                  <div className="flex justify-between">
+                    <div>
+                      <h4 className="font-semibold">{exp.role}</h4>
+                      <p className="text-sm text-primary">
+                        {exp.organization}
+                      </p>
                     </div>
-                    <ul className="list-disc list-inside text-sm text-muted-foreground print:text-gray-700 space-y-1 ml-1">
-                      {exp.bullets.map((b, j) => (
-                        <li key={j}>{b}</li>
-                      ))}
-                    </ul>
+                    <span className="text-sm text-muted-foreground">
+                      {exp.period}
+                    </span>
                   </div>
-                ))}
-              </div>
+
+                  <ul className="list-disc ml-5 text-sm text-muted-foreground">
+                    {exp.bullets.map((b, j) => (
+                      <li key={j}>{b}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </section>
 
             {/* Projects */}
             <section>
               <SectionTitle>Notable Projects</SectionTitle>
-              <div className="space-y-4 print:space-y-3">
-                {projects.map((project, i) => (
-                  <div key={i}>
-                    <div className="flex items-baseline gap-2">
-                      <h4 className="font-semibold text-foreground print:text-gray-900">
-                        {project.name}
-                      </h4>
-                      <span className="text-xs text-primary print:text-gray-500 font-medium">
-                        {project.tech}
-                      </span>
+
+              <div className="space-y-4">
+                {projects.map((project, i) => {
+                  const Icon = project.icon;
+
+                  return (
+                    <div key={i} className="flex gap-3">
+                      <Icon size={18} className="text-primary mt-1" />
+
+                      <div>
+                        <h4 className="font-semibold">{project.title}</h4>
+
+                        <p className="text-sm text-muted-foreground">
+                          {project.description}
+                        </p>
+
+                        <div className="flex gap-2 mt-1 flex-wrap">
+                          {project.tags.map((tag, j) => (
+                            <span
+                              key={j}
+                              className="text-xs px-2 py-1 rounded bg-primary/10 text-primary"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
                     </div>
-                    <p className="text-sm text-muted-foreground print:text-gray-700">
-                      {project.description}
-                    </p>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </section>
 
             {/* Achievements */}
             <section>
               <SectionTitle>Awards & Achievements</SectionTitle>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 print:gap-y-1 text-sm text-muted-foreground print:text-gray-700">
-                {achievements.map((a, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-primary print:text-gray-400 mt-1">•</span>
-                    {a}
-                  </li>
-                ))}
-              </ul>
+
+              <div className="grid sm:grid-cols-2 gap-4">
+                {achievements.map((a, i) => {
+                  const Icon = a.icon;
+
+                  return (
+                    <div key={i} className="flex gap-3">
+                      <Icon size={18} className="text-primary mt-1" />
+
+                      <div>
+                        <p className="font-semibold text-sm">
+                          {a.title}{' '}
+                          <span className="text-xs text-muted-foreground">
+                            ({a.year})
+                          </span>
+                        </p>
+
+                        <p className="text-sm text-muted-foreground">
+                          {a.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </section>
           </div>
         </motion.div>
@@ -261,7 +346,7 @@ const CV = () => {
 };
 
 const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-  <h3 className="text-lg font-display font-bold text-foreground print:text-gray-900 mb-3 pb-2 border-b border-border print:border-gray-300 uppercase tracking-wider text-sm">
+  <h3 className="text-sm font-bold uppercase tracking-wider border-b pb-2 mb-3">
     {children}
   </h3>
 );
