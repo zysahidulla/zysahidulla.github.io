@@ -1,21 +1,5 @@
 import { motion } from 'framer-motion';
-import {
-  Download,
-  ArrowLeft,
-  Mail,
-  MapPin,
-  Github,
-  Star,
-  Trophy,
-  Crown,
-  Medal,
-  Award,
-  Sparkles,
-  Bot,
-  Code,
-  Palette,
-  Smartphone
-} from 'lucide-react';
+import { Download, ArrowLeft, Mail, MapPin, Github } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const personalInfo = {
@@ -70,77 +54,38 @@ const skills = {
 
 const projects = [
   {
-    title: 'The Adoption Pawtal',
+    name: 'The Adoption Pawtal',
+    tech: 'SQL, PHP',
     description:
       'A PHP/MySQL-powered web platform that digitizes Philippine animal shelter operations by centralizing pet records, medical tracking, and adoption workflows.',
-    tags: ['SQL', 'PHP'],
-    icon: Bot,
   },
   {
-    title: 'Digital Clock',
+    name: 'Digital Clock',
+    tech: 'HTML, CSS, JavaScript',
     description:
       'A digital clock with a living background that mirrors the real world, cycling through sunrise, midday, and starry night animations.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    icon: Code,
   },
   {
-    title: 'A.R.T Money Changer Tracker',
+    name: 'A.R.T Money Changer Tracker',
+    tech: 'HTML, CSS, Figma, JavaScript',
     description:
       'A real-time financial dashboard that simplifies currency conversion and market tracking for USD, JPY, and PHP.',
-    tags: ['HTML', 'CSS', 'Figma', 'JavaScript'],
-    icon: Palette,
   },
   {
-    title: 'Weather Analytics Dashboard',
+    name: 'Weather Analytics Dashboard',
+    tech: 'HTML, CSS, JavaScript',
     description:
       'A responsive web-based weather analytics dashboard visualizing real-time weather conditions, geographic data, and forecasts.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    icon: Smartphone,
   },
 ];
 
 const achievements = [
-  {
-    title: 'Class Salutatorian',
-    description: 'Top 2 in the batch with academic excellence recognition',
-    icon: Star,
-    year: '2023',
-  },
-  {
-    title: 'With Honors',
-    description:
-      'Consistent honor student throughout Elementary and High School',
-    icon: Trophy,
-    year: '2013-2019',
-  },
-  {
-    title: 'With High Honors',
-    description:
-      'Consistent high honor student throughout Senior High School',
-    icon: Crown,
-    year: '2020-2023',
-  },
-  {
-    title: 'Journalism Excellence',
-    description:
-      'Outstanding contributor to school publications as the Managing Editor',
-    icon: Medal,
-    year: '2023',
-  },
-  {
-    title: 'Best in Conduct',
-    description:
-      'Maintained good conduct and discipline record throughout school years',
-    icon: Award,
-    year: '2019-2023',
-  },
-  {
-    title: 'Best in Computer Subject',
-    description:
-      'Best in Computer Subject in Grade School, showcasing early passion for technology',
-    icon: Sparkles,
-    year: '2016',
-  },
+  'Class Salutatorian – Academic Excellence (2023)',
+  'With Honors – Consistent honor student throughout Elementary and High School (2013–2019)',
+  'With High Honors – Senior High School (2020–2023)',
+  'Journalism Excellence – Managing Editor, School Publications (2023)',
+  'Best in Conduct – Maintained discipline record throughout school years (2019–2023)',
+  'Best in Computer Subject – Grade School (2016)',
 ];
 
 const handlePrint = () => {
@@ -150,66 +95,75 @@ const handlePrint = () => {
 const CV = () => {
   return (
     <div className="min-h-screen bg-background">
+
       {/* Toolbar */}
-      <div className="print:hidden sticky top-0 z-50 border-b border-border">
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="print:hidden sticky top-0 z-50 glass border-b border-border">
+        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+
           <Link
             to="/"
-            className="flex items-center gap-2 text-muted-foreground hover:text-foreground"
+            className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
           >
             <ArrowLeft size={18} />
-            Back to Portfolio
+            <span className="font-medium">Back to Portfolio</span>
           </Link>
 
           <motion.button
             onClick={handlePrint}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
           >
             <Download size={16} />
             Download / Print CV
           </motion.button>
+
         </div>
       </div>
 
       {/* CV Content */}
-      <div className="container mx-auto px-6 py-12">
+      <div className="container mx-auto px-6 py-12 print:p-0">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="max-w-[850px] mx-auto bg-card rounded-2xl shadow-2xl overflow-hidden"
+          transition={{ duration: 0.5 }}
+          className="max-w-[850px] mx-auto bg-card print:bg-white rounded-2xl print:rounded-none shadow-2xl print:shadow-none overflow-hidden"
         >
+
           {/* Header */}
-          <div className="bg-gradient-to-r from-primary/20 to-purple-600/20 px-10 py-10 border-b">
-            <h1 className="text-4xl font-bold mb-1">{personalInfo.name}</h1>
-            <p className="text-xl text-primary font-semibold mb-4">
+          <div className="bg-gradient-to-r from-primary/20 to-purple-600/20 print:from-gray-100 print:to-gray-100 px-10 py-10 print:py-8 border-b border-border print:border-gray-300">
+
+            <h1 className="text-4xl print:text-3xl font-display font-bold text-foreground print:text-gray-900 mb-1">
+              {personalInfo.name}
+            </h1>
+
+            <p className="text-xl print:text-lg text-primary print:text-gray-700 font-semibold mb-4">
               {personalInfo.title}
             </p>
 
-            <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
-              <span className="flex items-center gap-2">
-                <Mail size={14} />
-                {personalInfo.email}
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground print:text-gray-600">
+
+              <span className="flex items-center gap-1.5">
+                <Mail size={14}/> {personalInfo.email}
               </span>
 
-              <span className="flex items-center gap-2">
-                <MapPin size={14} />
-                {personalInfo.location}
+              <span className="flex items-center gap-1.5">
+                <MapPin size={14}/> {personalInfo.location}
               </span>
 
-              <span className="flex items-center gap-2">
-                <Github size={14} />
-                github.com/zysahidulla
+              <span className="flex items-center gap-1.5 print:hidden">
+                <Github size={14}/> github.com/zysahidulla
               </span>
+
             </div>
           </div>
 
-          <div className="px-10 py-8 space-y-8">
+          <div className="px-10 py-8 space-y-8 print:space-y-6 print:text-gray-800">
+
             {/* Summary */}
             <section>
               <SectionTitle>Professional Summary</SectionTitle>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground print:text-gray-700 leading-relaxed">
                 {personalInfo.summary}
               </p>
             </section>
@@ -217,95 +171,123 @@ const CV = () => {
             {/* Skills */}
             <section>
               <SectionTitle>Technical Skills</SectionTitle>
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 print:gap-2">
+
                 {Object.entries(skills).map(([category, items]) => (
                   <div key={category}>
-                    <h4 className="font-semibold text-sm">{category}</h4>
-                    <p className="text-sm text-muted-foreground">
+
+                    <h4 className="font-semibold text-foreground print:text-gray-900 text-sm mb-1">
+                      {category}
+                    </h4>
+
+                    <p className="text-sm text-muted-foreground print:text-gray-600">
                       {items.join(' · ')}
                     </p>
+
                   </div>
                 ))}
+
               </div>
             </section>
 
             {/* Education */}
             <section>
               <SectionTitle>Education</SectionTitle>
-              {education.map((edu, i) => (
-                <div key={i} className="flex justify-between">
-                  <div>
-                    <h4 className="font-semibold">{edu.institution}</h4>
-                    <p className="text-sm text-muted-foreground">
-                      {edu.degree}
-                    </p>
+
+              <div className="space-y-4 print:space-y-3">
+
+                {education.map((edu, i) => (
+                  <div key={i} className="flex justify-between items-start gap-4">
+
+                    <div>
+                      <h4 className="font-semibold text-foreground print:text-gray-900">
+                        {edu.institution}
+                      </h4>
+
+                      <p className="text-sm text-muted-foreground print:text-gray-600">
+                        {edu.degree}
+                      </p>
+                    </div>
+
+                    <span className="text-sm text-muted-foreground print:text-gray-500 whitespace-nowrap">
+                      {edu.period}
+                    </span>
+
                   </div>
-                  <span className="text-sm text-muted-foreground">
-                    {edu.period}
-                  </span>
-                </div>
-              ))}
+                ))}
+
+              </div>
             </section>
 
             {/* Experience */}
             <section>
               <SectionTitle>Leadership & Experience</SectionTitle>
-              {experience.map((exp, i) => (
-                <div key={i} className="mb-4">
-                  <div className="flex justify-between">
-                    <div>
-                      <h4 className="font-semibold">{exp.role}</h4>
-                      <p className="text-sm text-primary">
-                        {exp.organization}
-                      </p>
-                    </div>
-                    <span className="text-sm text-muted-foreground">
-                      {exp.period}
-                    </span>
-                  </div>
 
-                  <ul className="list-disc ml-5 text-sm text-muted-foreground">
-                    {exp.bullets.map((b, j) => (
-                      <li key={j}>{b}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+              <div className="space-y-5 print:space-y-4">
+
+                {experience.map((exp, i) => (
+                  <div key={i}>
+
+                    <div className="flex justify-between items-start gap-4 mb-1">
+
+                      <div>
+                        <h4 className="font-semibold text-foreground print:text-gray-900">
+                          {exp.role}
+                        </h4>
+
+                        <p className="text-sm text-primary print:text-gray-600 font-medium">
+                          {exp.organization}
+                        </p>
+                      </div>
+
+                      <span className="text-sm text-muted-foreground print:text-gray-500 whitespace-nowrap">
+                        {exp.period}
+                      </span>
+
+                    </div>
+
+                    <ul className="list-disc list-inside text-sm text-muted-foreground print:text-gray-700 space-y-1 ml-1">
+
+                      {exp.bullets.map((b, j) => (
+                        <li key={j}>{b}</li>
+                      ))}
+
+                    </ul>
+
+                  </div>
+                ))}
+
+              </div>
             </section>
 
             {/* Projects */}
             <section>
               <SectionTitle>Notable Projects</SectionTitle>
 
-              <div className="space-y-4">
-                {projects.map((project, i) => {
-                  const Icon = project.icon;
+              <div className="space-y-4 print:space-y-3">
 
-                  return (
-                    <div key={i} className="flex gap-3">
-                      <Icon size={18} className="text-primary mt-1" />
+                {projects.map((project, i) => (
+                  <div key={i}>
 
-                      <div>
-                        <h4 className="font-semibold">{project.title}</h4>
+                    <div className="flex items-baseline gap-2">
 
-                        <p className="text-sm text-muted-foreground">
-                          {project.description}
-                        </p>
+                      <h4 className="font-semibold text-foreground print:text-gray-900">
+                        {project.name}
+                      </h4>
 
-                        <div className="flex gap-2 mt-1 flex-wrap">
-                          {project.tags.map((tag, j) => (
-                            <span
-                              key={j}
-                              className="text-xs px-2 py-1 rounded bg-primary/10 text-primary"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
+                      <span className="text-xs text-primary print:text-gray-500 font-medium">
+                        {project.tech}
+                      </span>
+
                     </div>
-                  );
-                })}
+
+                    <p className="text-sm text-muted-foreground print:text-gray-700">
+                      {project.description}
+                    </p>
+
+                  </div>
+                ))}
+
               </div>
             </section>
 
@@ -313,31 +295,19 @@ const CV = () => {
             <section>
               <SectionTitle>Awards & Achievements</SectionTitle>
 
-              <div className="grid sm:grid-cols-2 gap-4">
-                {achievements.map((a, i) => {
-                  const Icon = a.icon;
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 print:gap-y-1 text-sm text-muted-foreground print:text-gray-700">
 
-                  return (
-                    <div key={i} className="flex gap-3">
-                      <Icon size={18} className="text-primary mt-1" />
+                {achievements.map((a, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-primary print:text-gray-400 mt-1">•</span>
+                    {a}
+                  </li>
+                ))}
 
-                      <div>
-                        <p className="font-semibold text-sm">
-                          {a.title}{' '}
-                          <span className="text-xs text-muted-foreground">
-                            ({a.year})
-                          </span>
-                        </p>
+              </ul>
 
-                        <p className="text-sm text-muted-foreground">
-                          {a.description}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
             </section>
+
           </div>
         </motion.div>
       </div>
@@ -346,7 +316,7 @@ const CV = () => {
 };
 
 const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-  <h3 className="text-sm font-bold uppercase tracking-wider border-b pb-2 mb-3">
+  <h3 className="text-lg font-display font-bold text-foreground print:text-gray-900 mb-3 pb-2 border-b border-border print:border-gray-300 uppercase tracking-wider text-sm">
     {children}
   </h3>
 );
