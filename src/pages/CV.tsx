@@ -8,7 +8,7 @@ const personalInfo = {
   email: 'zysahidulla@gmail.com',
   location: 'Manila, Philippines',
   summary:
-    'Passionate web developer and Computer Engineering student with 2+ years of experience building modern, responsive web applications. Skilled in HTML, CSS, JavaScript and full-stack development with a strong eye for UI/UX design.',
+    'Passionate Web Developer & Design and Computer Engineering student with 2+ years of experience building modern, responsive web applications. Skilled in HTML, CSS, JavaScript and full-stack development with a strong eye for UI/UX design.',
 };
 
 const education = [
@@ -19,7 +19,7 @@ const education = [
   },
   {
     institution: 'Malate Catholic School',
-    degree: 'Senior High School – STEM Track',
+    degree: 'Senior High School – STEM',
     period: '2020 – 2022',
   },
 ];
@@ -31,7 +31,7 @@ const experience = [
     period: '2023 – Present',
     bullets: [
       'Represented student body in legislative processes and policy discussions.',
-      'Collaborated with teams to organize university-wide events and initiatives.',
+      'Collaborated with USG & College Government to organize university-wide events and initiatives.',
     ],
   },
   {
