@@ -112,21 +112,21 @@ const HeroSection = () => {
           <motion.div variants={itemVariants} className="flex items-center justify-center gap-6">
             {[{
             icon: Github,
-            href: '#',
+            href: 'https://github.com/zysahidulla',
             label: 'GitHub'
           }, {
             icon: Linkedin,
-            href: '#',
+            href: 'https://www.linkedin.com/in/zysahidulla/',
             label: 'LinkedIn'
           }, {
             icon: Mail,
-            href: '#',
+            href: 'mailto:zysahidulla@gmail.com',
             label: 'Email'
           }].map(({
             icon: Icon,
             href,
             label
-          }) => <motion.a key={label} href={href} aria-label={label} className="p-3 rounded-full glass-card text-muted-foreground hover:text-primary hover:glow-primary transition-all duration-300" whileHover={{
+          }) => <motion.a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} className="p-3 rounded-full glass-card text-muted-foreground hover:text-primary hover:glow-primary transition-all duration-300" whileHover={{
             scale: 1.1,
             y: -4
           }} whileTap={{

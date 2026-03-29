@@ -1,7 +1,12 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Send, Mail, MapPin, Github, Linkedin, Twitter, Heart } from 'lucide-react';
+import { Send, Mail, MapPin, Github, Linkedin, Heart } from 'lucide-react';
+
+const CONTACT_ENDPOINT = import.meta.env.VITE_CONTACT_FORM_ENDPOINT as string | undefined;
+const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT as string | undefined;
+const DEFAULT_CONTACT_ENDPOINT = 'https://formsubmit.co/ajax/zysahidulla@gmail.com';
+const SUBMIT_ENDPOINT = CONTACT_ENDPOINT || FORMSPREE_ENDPOINT || DEFAULT_CONTACT_ENDPOINT;
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -11,10 +16,51 @@ const ContactSection = () => {
     email: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error';
+    message: string;
+  } | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formState);
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const payload = new FormData();
+      payload.append('name', formState.name);
+      payload.append('email', formState.email);
+      payload.append('message', formState.message);
+      payload.append('_subject', `Portfolio message from ${formState.name}`);
+      payload.append('_captcha', 'false');
+
+      const response = await fetch(SUBMIT_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+        },
+        body: payload,
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit contact form');
+      }
+
+      setSubmitStatus({
+        type: 'success',
+        message: 'Message sent successfully. I will get back to you soon.',
+      });
+      setFormState({ name: '', email: '', message: '' });
+    } catch {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Something went wrong while sending. Please try again in a moment.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -66,7 +112,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
-                    <p className="text-foreground">hello@yourname.dev</p>
+                    <p className="text-foreground">zysahidulla@gmail.com</p>
                   </div>
                 </motion.div>
                 
@@ -90,13 +136,15 @@ const ContactSection = () => {
                 <p className="text-sm text-muted-foreground mb-4">Connect with me</p>
                 <div className="flex gap-4">
                   {[
-                    { icon: Github, href: '#', label: 'GitHub' },
-                    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-                    { icon: Twitter, href: '#', label: 'Twitter' },
+                    { icon: Github, href: 'https://github.com/zysahidulla', label: 'GitHub' },
+                    { icon: Linkedin, href: 'https://www.linkedin.com/in/zysahidulla/', label: 'LinkedIn' },
+                    { icon: Mail, href: 'mailto:zysahidulla@gmail.com', label: 'Email' },
                   ].map(({ icon: Icon, href, label }, index) => (
                     <motion.a
                       key={label}
                       href={href}
+                      target="_blank"
+                      rel="noreferrer"
                       aria-label={label}
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={isInView ? { opacity: 1, scale: 1 } : {}}
@@ -132,6 +180,7 @@ const ContactSection = () => {
                   <input
                     type="text"
                     id="name"
+                    name="name"
                     value={formState.name}
                     onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300 text-foreground placeholder:text-muted-foreground"
@@ -151,6 +200,7 @@ const ContactSection = () => {
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     value={formState.email}
                     onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300 text-foreground placeholder:text-muted-foreground"
@@ -169,6 +219,7 @@ const ContactSection = () => {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={5}
                     value={formState.message}
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
@@ -183,13 +234,24 @@ const ContactSection = () => {
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.7 }}
                   type="submit"
+                  disabled={isSubmitting}
                   className="w-full py-4 rounded-lg bg-primary text-primary-foreground font-semibold flex items-center justify-center gap-2 hover:glow-primary transition-all duration-300"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                   <Send className="w-5 h-5" />
                 </motion.button>
+
+                {submitStatus && (
+                  <p
+                    className={`text-sm ${
+                      submitStatus.type === 'success' ? 'text-green-400' : 'text-red-400'
+                    }`}
+                  >
+                    {submitStatus.message}
+                  </p>
+                )}
               </div>
             </form>
           </motion.div>

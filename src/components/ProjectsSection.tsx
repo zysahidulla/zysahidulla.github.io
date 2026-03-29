@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { ExternalLink, Github, Folder, Code, Palette, Smartphone, Bot } from 'lucide-react';
+import { useRef, useState } from 'react';
+import { ExternalLink, Github, ChevronLeft, ChevronRight, Code, Palette, Smartphone, Bot } from 'lucide-react';
 
 const projects = [
   {
@@ -9,7 +9,8 @@ const projects = [
     description: 'A PHP/MySQL-powered web platform that digitizes Philippine animal shelter operations by centralizing pet records, medical tracking, and adoption workflows into one efficient system.',
     tags: ['SQL', 'PHP'],
     icon: Bot,
-    github: '#',
+    images: ['/projects/adoption-pawtal.png'], // add more paths here to enable gallery arrows
+    github: 'https://github.com/zysahidulla',
     live: '#',
   },
   {
@@ -17,7 +18,8 @@ const projects = [
     description: 'A digital clock that features a living background that mirrors the real world, cycling through sunrise, midday, and starry night animations based on the actual time of day.',
     tags: ['HTML', 'CSS', 'JavaScript'],
     icon: Code,
-    github: '#',
+    images: ['/projects/digital-clock.png'],
+    github: 'https://github.com/zysahidulla',
     live: '#',
   },
   {
@@ -25,7 +27,8 @@ const projects = [
     description: 'A user-friendly, real-time financial dashboard that simplifies currency conversion and market tracking for USD, JPY, and PHP through live updates and interactive historical charts.',
     tags: ['HTML', 'CSS', 'Figma', 'JavaScript'],
     icon: Palette,
-    github: '#',
+    images: ['/projects/art-money-changer.png'],
+    github: 'https://github.com/zysahidulla',
     live: '#',
   },
   {
@@ -33,7 +36,8 @@ const projects = [
     description: 'A responsive web-based weather analytics dashboard that visualizes real-time weather conditions, geographic data, and environmental trends through interactive maps, charts, and forecasts for multiple Philippine cities.',
     tags: ['HTMl', 'CSS', 'JavaScript'],
     icon: Smartphone,
-    github: '#',
+    images: ['/projects/weather-dashboard.png'],
+    github: 'https://github.com/zysahidulla',
     live: '#',
   },
 ];
@@ -42,6 +46,18 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const Icon = project.icon;
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = project.images ?? [];
+  const hasImages = images.length > 0;
+  const hasMultipleImages = images.length > 1;
+
+  const showPreviousImage = () => {
+    setCurrentImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const showNextImage = () => {
+    setCurrentImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
 
   return (
     <motion.div
@@ -56,25 +72,68 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
         initial={{ opacity: 0, scale: 0.9 }}
         animate={isInView ? { opacity: 1, scale: 1 } : {}}
         transition={{ duration: 0.6, delay: index * 0.15 + 0.2 }}
-        className={`relative aspect-[4/3] rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center group hover-lift ${
+        className={`relative aspect-[4/3] rounded-2xl border border-primary/20 overflow-hidden group hover-lift ${
           index % 2 === 1 ? 'md:order-2' : ''
         }`}
       >
-        {/* Inner glow border */}
-        <div className="absolute inset-4 rounded-xl border border-primary/10" />
-        
-        {/* Icon */}
-        <motion.div
-          whileHover={{ scale: 1.1, rotate: 5 }}
-          transition={{ type: 'spring', stiffness: 300 }}
-          className="w-20 h-20 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/50 transition-all duration-500"
-        >
-          <Icon className="w-10 h-10 text-primary" />
-        </motion.div>
+        {hasImages ? (
+          <img
+            src={images[currentImageIndex]}
+            alt={`${project.title} screenshot ${currentImageIndex + 1}`}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center">
+            {/* Inner glow border */}
+            <div className="absolute inset-4 rounded-xl border border-primary/10" />
+            {/* Icon */}
+            <motion.div
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+              className="w-20 h-20 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/50 transition-all duration-500"
+            >
+              <Icon className="w-10 h-10 text-primary" />
+            </motion.div>
+            {/* Decorative corner accents */}
+            <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-primary/30 rounded-tl-lg" />
+            <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-primary/30 rounded-br-lg" />
+          </div>
+        )}
 
-        {/* Decorative corner accents */}
-        <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-primary/30 rounded-tl-lg" />
-        <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-primary/30 rounded-br-lg" />
+        {hasMultipleImages && (
+          <>
+            <button
+              type="button"
+              onClick={showPreviousImage}
+              aria-label={`Previous image for ${project.title}`}
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/45 text-white flex items-center justify-center hover:bg-black/65 transition-colors"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              type="button"
+              onClick={showNextImage}
+              aria-label={`Next image for ${project.title}`}
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/45 text-white flex items-center justify-center hover:bg-black/65 transition-colors"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+              {images.map((_, imageIndex) => (
+                <button
+                  key={`${project.title}-dot-${imageIndex}`}
+                  type="button"
+                  onClick={() => setCurrentImageIndex(imageIndex)}
+                  aria-label={`Go to image ${imageIndex + 1} for ${project.title}`}
+                  className={`h-2 rounded-full transition-all ${
+                    imageIndex === currentImageIndex ? 'w-5 bg-white' : 'w-2 bg-white/60 hover:bg-white/80'
+                  }`}
+                />
+              ))}
+            </div>
+          </>
+        )}
       </motion.div>
 
       {/* Right side - Content */}
@@ -132,6 +191,8 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
         >
           <motion.a
             href={project.github}
+            target="_blank"
+            rel="noreferrer"
             className="p-3 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
@@ -141,6 +202,8 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
           </motion.a>
           <motion.a
             href={project.live}
+            target="_blank"
+            rel="noreferrer"
             className="p-3 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
