@@ -47,7 +47,7 @@ const experience = [
 
 const skills = {
   Languages: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C++'],
-  Frontend: ['React', 'Next.js', 'Vue.js', 'Tailwind CSS', 'HTML/CSS'],
+  Frontend: ['HTML/CSS', 'React', 'Canva'],
   'Backend & DB': ['Node.js', 'MongoDB', 'PostgreSQL'],
   'Tools & Design': ['Git', 'VS Code', 'Figma', 'Photoshop'],
 };
