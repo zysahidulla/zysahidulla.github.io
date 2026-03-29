@@ -24,8 +24,13 @@ const skills = [
 
 const SkillCard = ({ skill, index }: { skill: typeof skills[0]; index: number }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isTouched, setIsTouched] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
+
+  const handleTouch = () => {
+    setIsTouched(!isTouched);
+  };
 
   return (
     <motion.div
@@ -45,6 +50,7 @@ const SkillCard = ({ skill, index }: { skill: typeof skills[0]; index: number })
       }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
+      onTouchStart={handleTouch}
       className="relative group"
     >
       <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl glass-card border-gradient flex items-center justify-center p-4 transition-all duration-300 group-hover:glow-primary">
@@ -58,7 +64,7 @@ const SkillCard = ({ skill, index }: { skill: typeof skills[0]; index: number })
       {/* Percentage tooltip */}
       <motion.div
         initial={{ opacity: 0, y: 10, scale: 0.8 }}
-        animate={isHovered ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 10, scale: 0.8 }}
+        animate={(isHovered || isTouched) ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 10, scale: 0.8 }}
         transition={{ duration: 0.2 }}
         className="absolute -top-16 left-1/2 -translate-x-1/2 z-20"
       >
@@ -68,7 +74,7 @@ const SkillCard = ({ skill, index }: { skill: typeof skills[0]; index: number })
             <div className="w-16 h-1.5 bg-muted rounded-full overflow-hidden">
               <motion.div
                 initial={{ width: 0 }}
-                animate={isHovered ? { width: `${skill.level}%` } : { width: 0 }}
+                animate={(isHovered || isTouched) ? { width: `${skill.level}%` } : { width: 0 }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
                 className="h-full rounded-full bg-gradient-to-r from-primary to-secondary"
               />
@@ -79,8 +85,8 @@ const SkillCard = ({ skill, index }: { skill: typeof skills[0]; index: number })
         <div className="w-3 h-3 bg-primary/20 rotate-45 absolute -bottom-1.5 left-1/2 -translate-x-1/2 border-r border-b border-primary/30" />
       </motion.div>
 
-      {/* Floating particles on hover */}
-      {isHovered && (
+      {/* Floating particles on hover/touch */}
+      {(isHovered || isTouched) && (
         <>
           {[...Array(3)].map((_, i) => (
             <motion.div
