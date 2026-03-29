@@ -74,7 +74,7 @@ const AboutSection = () => {
                 <img 
                   src="/profile.jpg.png"
                   alt="Profile" 
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                  className="w-full h-full object-cover transition-all duration-500"
                 />
               </div>
             </div>
