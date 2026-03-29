@@ -19,7 +19,7 @@ const skills = [
   { name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg', level: 95 },
   { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', level: 40 },
   { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg', level: 80 },
-  { name: 'Canva', icon: 'https://cdn.worldvectorlogo.com/logos/canva-1.svg', level: 100 },
+  { name: 'Canva', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg', level: 100 },
 ];
 
 const SkillCard = ({ skill, index }: { skill: typeof skills[0]; index: number }) => {
