@@ -245,7 +245,7 @@ const ContactSection = () => {
 
                 {submitStatus && (
                   <p
-                    className={`text-sm ${
+                    className={`text-sm text-center ${
                       submitStatus.type === 'success' ? 'text-green-400' : 'text-red-400'
                     }`}
                   >
