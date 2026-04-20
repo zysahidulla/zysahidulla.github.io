@@ -15,7 +15,7 @@ const specializations = [
   },
   {
     icon: Palette,
-    title: 'UI/UX Design',
+    title: 'UI/UX Designs',
     description: 'Creating intuitive, beautiful interfaces that users love to interact with.',
   },
   {
