@@ -72,7 +72,7 @@ const AboutSection = () => {
               
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-background glass-card shadow-2xl">
                 <img 
-                  src="/profile.jpg.png"
+                  src="/profile.png"
                   alt="Profile" 
                   className="w-full h-full object-cover transition-all duration-500"
                 />
