@@ -388,10 +388,10 @@ const ProjectsSection = () => {
           className="mb-20 text-center"
         >
           <span className="text-primary font-medium text-sm tracking-widest uppercase mb-4 block">
-            Featured Projects
+            Works & Experiments
           </span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
-            Things I've Built
+            Featured Projects
           </h2>
         </motion.div>
 

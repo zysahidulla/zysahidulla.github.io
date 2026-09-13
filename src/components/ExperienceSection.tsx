@@ -124,6 +124,9 @@ const ExperienceSection = () => {
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
             My Journey
           </h2>
+          <p className="text-muted-foreground mt-6 max-w-2xl mx-auto">
+            Achievements and Experiences in Education and Organizations
+          </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">
@@ -200,7 +203,7 @@ const ExperienceSection = () => {
               className="font-display text-2xl font-semibold text-primary mb-8 flex items-center gap-3"
             >
               <Briefcase className="w-6 h-6" />
-              Leadership & Activities
+              Activities & Organizations
             </motion.h3>
             
             <div className="relative">
