@@ -1,6 +1,7 @@
 import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 import { allProjects } from '@/components/ProjectsSection';
+import ParticleBackground from '@/components/ParticleBackground';
 
 const ProjectDetailPage = () => {
   const { slug } = useParams();
@@ -27,8 +28,9 @@ const ProjectDetailPage = () => {
   const images = project.images ?? [project.image ?? ''];
 
   return (
-    <div className="min-h-screen bg-gradient-hero noise-overlay">
-      <div className="container mx-auto max-w-5xl px-6 py-10 md:py-16">
+    <div className="relative min-h-screen bg-gradient-hero noise-overlay">
+      <ParticleBackground />
+      <div className="container relative z-10 mx-auto max-w-5xl px-6 py-10 md:py-16">
         <Link
           to="/"
           className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-card/60 px-4 py-2 text-sm text-muted-foreground transition-colors hover:text-primary"
