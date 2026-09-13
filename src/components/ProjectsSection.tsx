@@ -48,6 +48,7 @@ const otherProjects = [
     description: 'A lightweight portfolio generator for showcasing case studies and personal projects quickly.',
     tags: ['React', 'Tailwind'],
     icon: Code,
+    image: '/profile.jpg.png',
     github: 'https://github.com/zysahidulla',
     live: '#',
   },
@@ -56,6 +57,7 @@ const otherProjects = [
     description: 'A set of reusable design patterns and interface experiments focused on cleaner interactions.',
     tags: ['Figma', 'UI'],
     icon: Palette,
+    image: '/profile.jpg.png',
     github: 'https://github.com/zysahidulla',
     live: '#',
   },
@@ -64,6 +66,7 @@ const otherProjects = [
     description: 'Small utility widgets for weather snapshots, quick checks, and city-based summaries.',
     tags: ['JavaScript', 'API'],
     icon: Smartphone,
+    image: '/profile.jpg.png',
     github: 'https://github.com/zysahidulla',
     live: '#',
   },
@@ -72,6 +75,7 @@ const otherProjects = [
     description: 'Side experiments around workflow automation, chat interactions, and small task helpers.',
     tags: ['Automation', 'AI'],
     icon: Bot,
+    image: '/profile.jpg.png',
     github: 'https://github.com/zysahidulla',
     live: '#',
   },
@@ -80,6 +84,7 @@ const otherProjects = [
     description: 'Compact dashboard widgets used to test visualizations and metrics layouts.',
     tags: ['Charts', 'CSS'],
     icon: Smartphone,
+    image: '/profile.jpg.png',
     github: 'https://github.com/zysahidulla',
     live: '#',
   },
@@ -88,6 +93,7 @@ const otherProjects = [
     description: 'A concept landing page exploring editorial layouts, motion, and polished branding.',
     tags: ['HTML', 'CSS'],
     icon: Palette,
+    image: '/profile.jpg.png',
     github: 'https://github.com/zysahidulla',
     live: '#',
   },
@@ -281,12 +287,51 @@ const OtherProjectCard = ({ project, index }: { project: (typeof otherProjects)[
       transition={{ duration: 0.5, delay: index * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
       className="group h-full rounded-2xl border border-primary/10 bg-card/50 p-5 backdrop-blur-sm shadow-[0_0_0_1px_rgba(255,255,255,0.02)] hover:border-primary/30 hover:bg-primary/5 transition-all duration-300"
     >
-      <div className="flex items-center justify-between mb-4">
-        <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-          <Icon className="w-5 h-5" />
+      {project.image ? (
+        <div className="mb-4 overflow-hidden rounded-xl border border-primary/10 bg-primary/5">
+          <img
+            src={project.image}
+            alt={`${project.title} thumbnail`}
+            className="h-32 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
         </div>
+      ) : (
+        <div className="mb-4 flex items-center justify-between">
+          <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+            <Icon className="w-5 h-5" />
+          </div>
 
-        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2">
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noreferrer"
+              className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
+              aria-label={`View GitHub for ${project.title}`}
+            >
+              <Github className="w-4 h-4" />
+            </a>
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noreferrer"
+              className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
+              aria-label={`View live demo for ${project.title}`}
+            >
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      )}
+
+      <div className="flex items-center justify-between mb-4">
+        {!project.image && (
+          <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+            <Icon className="w-5 h-5" />
+          </div>
+        )}
+
+        <div className="flex items-center gap-2 ml-auto">
           <a
             href={project.github}
             target="_blank"
