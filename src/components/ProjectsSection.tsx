@@ -42,6 +42,57 @@ const projects = [
   },
 ];
 
+const otherProjects = [
+  {
+    title: 'Mini Portfolio Builder',
+    description: 'A lightweight portfolio generator for showcasing case studies and personal projects quickly.',
+    tags: ['React', 'Tailwind'],
+    icon: Code,
+    github: 'https://github.com/zysahidulla',
+    live: '#',
+  },
+  {
+    title: 'UI Exploration Kit',
+    description: 'A set of reusable design patterns and interface experiments focused on cleaner interactions.',
+    tags: ['Figma', 'UI'],
+    icon: Palette,
+    github: 'https://github.com/zysahidulla',
+    live: '#',
+  },
+  {
+    title: 'Local Weather Widgets',
+    description: 'Small utility widgets for weather snapshots, quick checks, and city-based summaries.',
+    tags: ['JavaScript', 'API'],
+    icon: Smartphone,
+    github: 'https://github.com/zysahidulla',
+    live: '#',
+  },
+  {
+    title: 'Bot Experiments',
+    description: 'Side experiments around workflow automation, chat interactions, and small task helpers.',
+    tags: ['Automation', 'AI'],
+    icon: Bot,
+    github: 'https://github.com/zysahidulla',
+    live: '#',
+  },
+  {
+    title: 'Analytics Snippets',
+    description: 'Compact dashboard widgets used to test visualizations and metrics layouts.',
+    tags: ['Charts', 'CSS'],
+    icon: Smartphone,
+    github: 'https://github.com/zysahidulla',
+    live: '#',
+  },
+  {
+    title: 'Creative Landing Page',
+    description: 'A concept landing page exploring editorial layouts, motion, and polished branding.',
+    tags: ['HTML', 'CSS'],
+    icon: Palette,
+    github: 'https://github.com/zysahidulla',
+    live: '#',
+  },
+];
+
 const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: number }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
@@ -217,6 +268,63 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
   );
 };
 
+const OtherProjectCard = ({ project, index }: { project: (typeof otherProjects)[0]; index: number }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-50px' });
+  const Icon = project.icon;
+
+  return (
+    <motion.article
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, delay: index * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
+      className="group h-full rounded-2xl border border-primary/10 bg-card/50 p-5 backdrop-blur-sm shadow-[0_0_0_1px_rgba(255,255,255,0.02)] hover:border-primary/30 hover:bg-primary/5 transition-all duration-300"
+    >
+      <div className="flex items-center justify-between mb-4">
+        <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+          <Icon className="w-5 h-5" />
+        </div>
+
+        <div className="flex items-center gap-2">
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noreferrer"
+            className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
+            aria-label={`View GitHub for ${project.title}`}
+          >
+            <Github className="w-4 h-4" />
+          </a>
+          <a
+            href={project.live}
+            target="_blank"
+            rel="noreferrer"
+            className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
+            aria-label={`View live demo for ${project.title}`}
+          >
+            <ExternalLink className="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+
+      <h3 className="font-display text-xl font-bold text-foreground mb-3">{project.title}</h3>
+      <p className="text-sm leading-relaxed text-muted-foreground mb-4">{project.description}</p>
+
+      <div className="flex flex-wrap gap-2">
+        {project.tags.map((tag) => (
+          <span
+            key={tag}
+            className="px-2.5 py-1 rounded-full border border-primary/15 bg-primary/5 text-[11px] uppercase tracking-[0.08em] text-muted-foreground"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+    </motion.article>
+  );
+};
+
 const ProjectsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
@@ -247,6 +355,28 @@ const ProjectsSection = () => {
             <ProjectCard key={project.title} project={project} index={index} />
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="mt-24 max-w-6xl mx-auto"
+        >
+          <div className="mb-10 text-center md:text-left">
+            <span className="text-primary font-medium text-sm tracking-widest uppercase mb-3 block">
+              Other Projects
+            </span>
+            <h3 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+              Small side builds
+            </h3>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {otherProjects.map((project, index) => (
+              <OtherProjectCard key={project.title} project={project} index={index} />
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
