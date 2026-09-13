@@ -235,70 +235,13 @@
   }
 }
 
-body {
-  cursor: none;
+/* Heart Cursor */
+*, *::before, *::after {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23ff4da6' stroke='%23ff4da6' stroke-width='2'%3E%3Cpath d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/%3E%3C/svg%3E") 12 12, auto;
 }
 
-button,
-a,
-input,
-textarea,
-select,
-[role="button"],
-[tabindex] {
-  cursor: none;
-}
-
-.cursor-sparkle-layer {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-}
-
-.cursor-trail,
-.cursor-pop {
-  position: absolute;
-  border-radius: 9999px;
-  box-shadow: 0 0 16px rgba(255, 255, 255, 0.8), 0 0 28px currentColor;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-
-.cursor-trail {
-  animation: trailFade 180ms ease-out forwards;
-  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,120,220,0.9));
-  filter: blur(1px);
-}
-
-.cursor-pop {
-  animation: sparklePop 500ms ease-out forwards;
-  box-shadow: 0 0 18px currentColor, 0 0 32px rgba(255, 155, 230, 0.9);
-}
-
-@keyframes trailFade {
-  0% {
-    opacity: 0.9;
-    transform: translate(-50%, -50%) scale(0.5);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(1.6);
-  }
-}
-
-@keyframes sparklePop {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.3);
-  }
-  18% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1.8);
-  }
+a, button, [role="button"], input[type="submit"], .hover-lift {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='%23ff4da6' stroke='%23ffffff' stroke-width='1'%3E%3Cpath d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/%3E%3C/svg%3E") 14 14, pointer;
 }
 
 /* Custom scrollbar */
