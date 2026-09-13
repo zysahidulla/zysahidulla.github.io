@@ -5,9 +5,9 @@ import { ExternalLink, Github, ChevronLeft, ChevronRight, Code, Palette, Smartph
 
 const projects = [
   {
-    title: 'The Adoption Pawtal',
-    description: 'A PHP/MySQL-powered web platform that digitizes Philippine animal shelter operations by centralizing pet records, medical tracking, and adoption workflows into one efficient system.',
-    tags: ['SQL', 'PHP'],
+    title: 'Logos: Logic Simulator',
+    description: 'A web-based logic circuit simulator that allows users to design, simulate, and visualize digital circuits using a variety of logic gates and components.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
     icon: Bot,
     images: ['/public/logos4.png','/public/logos1.png','/public/logos2.png','/public/logos3.png'], // add more paths here to enable gallery arrows
     github: 'https://github.com/zysahidulla',
