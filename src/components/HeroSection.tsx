@@ -39,7 +39,7 @@ const HeroSection = () => {
     }} transition={{
       duration: 1.5,
       ease: 'easeOut'
-    }} className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse-glow" />
+    }} className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-2xl animate-pulse-glow" />
       <motion.div initial={{
       opacity: 0,
       scale: 0.8
@@ -50,7 +50,7 @@ const HeroSection = () => {
       duration: 1.5,
       delay: 0.3,
       ease: 'easeOut'
-    }} className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/15 rounded-full blur-3xl animate-pulse-glow" />
+    }} className="absolute bottom-1/4 right-1/4 w-56 h-56 bg-secondary/8 rounded-full blur-2xl animate-pulse-glow" />
 
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">

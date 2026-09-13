@@ -35,16 +35,16 @@ const ParticleBackground = () => {
     window.addEventListener('resize', resizeCanvas);
 
     const particles: Particle[] = [];
-    const particleCount = 80;
+    const particleCount = 42;
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        size: Math.random() * 2 + 0.5,
-        opacity: Math.random() * 0.5 + 0.1,
+        vx: (Math.random() - 0.5) * 0.18,
+        vy: (Math.random() - 0.5) * 0.18,
+        size: Math.random() * 1.6 + 0.5,
+        opacity: Math.random() * 0.25 + 0.05,
       });
     }
 
@@ -60,7 +60,7 @@ const ParticleBackground = () => {
 
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 77, 166, ${particle.opacity})`;
+        ctx.fillStyle = `rgba(255, 107, 181, ${particle.opacity})`;
         ctx.fill();
       });
 
@@ -71,12 +71,12 @@ const ParticleBackground = () => {
           const dy = p1.y - p2.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 120) {
+          if (distance < 110) {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(255, 77, 166, ${0.1 * (1 - distance / 120)})`;
-            ctx.lineWidth = 0.5;
+            ctx.strokeStyle = `rgba(255, 107, 181, ${0.05 * (1 - distance / 110)})`;
+            ctx.lineWidth = 0.4;
             ctx.stroke();
           }
         });
@@ -96,7 +96,7 @@ const ParticleBackground = () => {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.6 }}
+      style={{ opacity: 0.34 }}
     />
   );
 };

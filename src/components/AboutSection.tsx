@@ -37,9 +37,9 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="about" className="relative py-32 overflow-hidden">
+    <section id="about" className="relative py-32 overflow-hidden isolate">
       {/* Background accent */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-radial opacity-50" />
+      <div className="pointer-events-none absolute top-0 right-0 w-1/2 h-full bg-gradient-radial opacity-20 blur-2xl" />
 
       <div className="container mx-auto px-6 relative z-10" ref={ref}>
         {/* Header Section */}

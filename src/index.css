@@ -103,15 +103,15 @@
   .bg-gradient-radial {
     background: radial-gradient(
       ellipse at 50% 0%,
-      hsl(var(--glow-primary) / 0.15) 0%,
-      transparent 50%
+      hsl(var(--glow-primary) / 0.06) 0%,
+      transparent 60%
     );
   }
 
   .bg-gradient-hero {
     background: 
-      radial-gradient(ellipse at 30% 20%, hsl(var(--glow-primary) / 0.08) 0%, transparent 50%),
-      radial-gradient(ellipse at 70% 60%, hsl(var(--glow-secondary) / 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 30% 20%, hsl(var(--glow-primary) / 0.04) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 60%, hsl(var(--glow-secondary) / 0.03) 0%, transparent 50%),
       linear-gradient(180deg, hsl(var(--gradient-start)) 0%, hsl(var(--gradient-mid)) 100%);
   }
 
