@@ -138,7 +138,7 @@ const ContactSection = () => {
                   {[
                     { icon: Github, href: 'https://github.com/zysahidulla', label: 'GitHub' },
                     { icon: Linkedin, href: 'https://www.linkedin.com/in/zysahidulla/', label: 'LinkedIn' },
-                    { icon: Mail, href: 'mailto:zysahidulla@gmail.com', label: 'Email' },
+                    { icon: Mail, href: 'https://mail.google.com/mail/?view=cm&fs=1&to=zysahidulla@gmail.com', label: 'Email' },
                   ].map(({ icon: Icon, href, label }, index) => (
                     <motion.a
                       key={label}

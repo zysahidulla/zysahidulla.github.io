@@ -120,7 +120,7 @@ const HeroSection = () => {
             label: 'LinkedIn'
           }, {
             icon: Mail,
-            href: 'mailto:zysahidulla@gmail.com',
+            href: 'https://mail.google.com/mail/?view=cm&fs=1&to=zysahidulla@gmail.com',
             label: 'Email'
           }].map(({
             icon: Icon,
