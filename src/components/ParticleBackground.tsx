@@ -19,6 +19,8 @@ const ParticleBackground = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    let animationFrameId = 0;
+
     const resizeCanvas = () => {
       const width = window.innerWidth;
       const height = window.innerHeight;
@@ -31,16 +33,13 @@ const ParticleBackground = () => {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
     const particles: Particle[] = [];
     const particleCount = 80;
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
         vx: (Math.random() - 0.5) * 0.18,
         vy: (Math.random() - 0.5) * 0.18,
         size: Math.random() * 1.6 + 0.5,
@@ -55,8 +54,8 @@ const ParticleBackground = () => {
         particle.x += particle.vx;
         particle.y += particle.vy;
 
-        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+        if (particle.x < 0 || particle.x > window.innerWidth) particle.vx *= -1;
+        if (particle.y < 0 || particle.y > window.innerHeight) particle.vy *= -1;
 
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
@@ -64,7 +63,6 @@ const ParticleBackground = () => {
         ctx.fill();
       });
 
-      // Draw connections
       particles.forEach((p1, i) => {
         particles.slice(i + 1).forEach((p2) => {
           const dx = p1.x - p2.x;
@@ -82,13 +80,16 @@ const ParticleBackground = () => {
         });
       });
 
-      requestAnimationFrame(animate);
+      animationFrameId = window.requestAnimationFrame(animate);
     };
 
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
     animate();
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
+      window.cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
@@ -96,7 +97,7 @@ const ParticleBackground = () => {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.34 }}
+      style={{ opacity: 1 }}
     />
   );
 };
