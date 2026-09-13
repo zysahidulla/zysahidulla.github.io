@@ -1,19 +1,22 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ExternalLink, Github, ChevronLeft, ChevronRight, Code, Palette, Smartphone, Bot } from 'lucide-react';
 
 const projects = [
   {
+    slug: 'logos-logic-simulator',
     title: 'Logos: Logic Simulator',
     description: 'A web-based logic circuit simulator that allows users to design, simulate, and visualize digital circuits using a variety of logic gates and components.',
     tags: ['HTML', 'CSS', 'JavaScript'],
     icon: Bot,
-    images: ['/public/logos4.png','/public/logos1.png','/public/logos2.png','/public/logos3.png'], // add more paths here to enable gallery arrows
-    github: 'https://github.com/zysahidulla',
-    live: '#',
+    images: ['/logos1.png','/logos2.png'],
+    github: 'https://github.com/zysahidulla/logos-sim',
+    live: 'https://zysahidulla.github.io/logos-sim/',
   },
   {
+    slug: 'digital-clock',
     title: 'Digital Clock',
     description: 'A digital clock that features a living background that mirrors the real world, cycling through sunrise, midday, and starry night animations based on the actual time of day.',
     tags: ['HTML', 'CSS', 'JavaScript'],
@@ -23,6 +26,7 @@ const projects = [
     live: '#',
   },
   {
+    slug: 'art-money-changer-tracker',
     title: 'A.R.T Money Changer Tracker',
     description: 'A user-friendly, real-time financial dashboard that simplifies currency conversion and market tracking for USD, JPY, and PHP through live updates and interactive historical charts.',
     tags: ['HTML', 'CSS', 'Figma', 'JavaScript'],
@@ -32,6 +36,7 @@ const projects = [
     live: '#',
   },
   {
+    slug: 'weather-analytics-dashboard',
     title: 'Weather Analytics Dashboard',
     description: 'A responsive web-based weather analytics dashboard that visualizes real-time weather conditions, geographic data, and environmental trends through interactive maps, charts, and forecasts for multiple Philippine cities.',
     tags: ['HTMl', 'CSS', 'JavaScript'],
@@ -44,60 +49,68 @@ const projects = [
 
 const otherProjects = [
   {
+    slug: 'mini-portfolio-builder',
     title: 'Mini Portfolio Builder',
     description: 'A lightweight portfolio generator for showcasing case studies and personal projects quickly.',
     tags: ['React', 'Tailwind'],
     icon: Code,
-    image: '/profile.jpg.png',
+    image: '/profile.png',
     github: 'https://github.com/zysahidulla',
     live: '#',
   },
   {
+    slug: 'ui-exploration-kit',
     title: 'UI Exploration Kit',
     description: 'A set of reusable design patterns and interface experiments focused on cleaner interactions.',
     tags: ['Figma', 'UI'],
     icon: Palette,
-    image: '/profile.jpg.png',
+    image: '/profile.png',
     github: 'https://github.com/zysahidulla',
     live: '#',
   },
   {
+    slug: 'local-weather-widgets',
     title: 'Local Weather Widgets',
     description: 'Small utility widgets for weather snapshots, quick checks, and city-based summaries.',
     tags: ['JavaScript', 'API'],
     icon: Smartphone,
-    image: '/profile.jpg.png',
+    image: '/profile.png',
     github: 'https://github.com/zysahidulla',
     live: '#',
   },
   {
+    slug: 'bot-experiments',
     title: 'Bot Experiments',
     description: 'Side experiments around workflow automation, chat interactions, and small task helpers.',
     tags: ['Automation', 'AI'],
     icon: Bot,
-    image: '/profile.jpg.png',
+    image: '/profile.png',
     github: 'https://github.com/zysahidulla',
     live: '#',
   },
   {
+    slug: 'analytics-snippets',
     title: 'Analytics Snippets',
     description: 'Compact dashboard widgets used to test visualizations and metrics layouts.',
     tags: ['Charts', 'CSS'],
     icon: Smartphone,
-    image: '/profile.jpg.png',
+    image: '/profile.png',
     github: 'https://github.com/zysahidulla',
     live: '#',
   },
   {
+    slug: 'creative-landing-page',
     title: 'Creative Landing Page',
     description: 'A concept landing page exploring editorial layouts, motion, and polished branding.',
     tags: ['HTML', 'CSS'],
     icon: Palette,
-    image: '/profile.jpg.png',
+    image: '/profile.png',
     github: 'https://github.com/zysahidulla',
     live: '#',
   },
 ];
+
+export const allProjects = [...projects, ...otherProjects];
 
 const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: number }) => {
   const ref = useRef(null);
@@ -137,7 +150,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
           <img
             src={images[currentImageIndex]}
             alt={`${project.title} screenshot ${currentImageIndex + 1}`}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center">
@@ -268,6 +281,12 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
           >
             <ExternalLink className="w-6 h-6" />
           </motion.a>
+          <Link
+            to={`/projects/${project.slug}`}
+            className="rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-sm font-medium text-primary transition-colors hover:border-primary/40 hover:bg-primary/10"
+          >
+            View project
+          </Link>
         </motion.div>
       </div>
     </motion.div>
@@ -352,6 +371,13 @@ const OtherProjectCard = ({ project, index }: { project: (typeof otherProjects)[
           </a>
         </div>
       </div>
+
+      <Link
+        to={`/projects/${project.slug}`}
+        className="mb-3 inline-flex items-center text-sm font-medium text-primary hover:text-primary/80"
+      >
+        View details →
+      </Link>
 
       <h3 className="font-display text-xl font-bold text-foreground mb-3">{project.title}</h3>
       <p className="text-sm leading-relaxed text-muted-foreground mb-4">{project.description}</p>
