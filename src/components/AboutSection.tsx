@@ -26,7 +26,7 @@ const specializations = [
 ];
 
 const bioInfo = [
-  { icon: Calendar, label: 'Age', value: '21 Years Old' },
+  { icon: Calendar, label: 'Age', value: '22 Years Old' },
   { icon: MapPin, label: 'Location', value: 'Manila, Philippines' },
   { icon: GraduationCap, label: 'Education', value: 'BS in Computer Engineering' },
   { icon: Mail, label: 'Email', value: 'zysahidulla@gmail.com' },
@@ -113,7 +113,7 @@ const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="glass-card rounded-2xl p-8 border-gradient">
-              <h3 className="text-2xl font-bold mb-4 font-display">Bridging Code & Creativity</h3>
+              <h3 className="text-2xl font-bold mb-4 font-display">About Me</h3>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 As a student passionate about technology and design, I'm on a mission to create 
                 digital experiences that make a difference. My journey spans across multiple 
