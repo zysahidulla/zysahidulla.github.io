@@ -23,7 +23,7 @@ const projects = [
     icon: Code,
     images: ['/projects/digital-clock.png'],
     github: 'https://github.com/zysahidulla',
-    live: '#',
+    live: 'test',
   },
   {
     slug: 'art-money-changer-tracker',
