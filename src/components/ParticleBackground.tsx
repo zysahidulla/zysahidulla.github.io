@@ -35,7 +35,7 @@ const ParticleBackground = () => {
     window.addEventListener('resize', resizeCanvas);
 
     const particles: Particle[] = [];
-    const particleCount = 42;
+    const particleCount = 80;
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
