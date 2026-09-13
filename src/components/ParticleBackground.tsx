@@ -13,75 +13,104 @@ const ParticleBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    const deviceScale = Math.min(window.devicePixelRatio || 1, 1.5);
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 22 : 42;
+    const maxDistance = isMobile ? 80 : 120;
+    let animationFrameId = 0;
+
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      canvas.width = width * deviceScale;
+      canvas.height = height * deviceScale;
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      ctx.setTransform(deviceScale, 0, 0, deviceScale, 0, 0);
     };
 
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    const particles: Particle[] = [];
-    const particleCount = 80;
-
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        size: Math.random() * 2 + 0.5,
-        opacity: Math.random() * 0.5 + 0.1,
-      });
-    }
+    const particles: Particle[] = Array.from({ length: particleCount }, () => ({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      size: Math.random() * 2 + 0.6,
+      opacity: Math.random() * 0.5 + 0.12,
+    }));
 
     const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const width = window.innerWidth;
+      const height = window.innerHeight;
 
-      particles.forEach((particle) => {
+      ctx.clearRect(0, 0, width, height);
+
+      for (let i = 0; i < particles.length; i += 1) {
+        const particle = particles[i];
+
         particle.x += particle.vx;
         particle.y += particle.vy;
 
-        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+        if (particle.x < 0 || particle.x > width) particle.vx *= -1;
+        if (particle.y < 0 || particle.y > height) particle.vy *= -1;
 
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(255, 77, 166, ${particle.opacity})`;
         ctx.fill();
-      });
+      }
 
-      // Draw connections
-      particles.forEach((p1, i) => {
-        particles.slice(i + 1).forEach((p2) => {
+      for (let i = 0; i < particles.length; i += 1) {
+        const p1 = particles[i];
+
+        for (let j = i + 1; j < particles.length; j += 1) {
+          const p2 = particles[j];
           const dx = p1.x - p2.x;
           const dy = p1.y - p2.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 120) {
+          if (distance < maxDistance) {
+            const opacity = (1 - distance / maxDistance) * 0.18;
+
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(255, 77, 166, ${0.1 * (1 - distance / 120)})`;
+            ctx.strokeStyle = `rgba(255, 77, 166, ${opacity})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
-        });
-      });
+        }
+      }
 
-      requestAnimationFrame(animate);
+      animationFrameId = window.requestAnimationFrame(animate);
     };
 
+    resizeCanvas();
     animate();
 
+    const handleResize = () => {
+      resizeCanvas();
+
+      particles.forEach((particle) => {
+        particle.x = Math.min(Math.max(particle.x, 0), window.innerWidth);
+        particle.y = Math.min(Math.max(particle.y, 0), window.innerHeight);
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
+      window.cancelAnimationFrame(animationFrameId);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
