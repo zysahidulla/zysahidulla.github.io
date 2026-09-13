@@ -9,7 +9,7 @@ const projects = [
     description: 'A PHP/MySQL-powered web platform that digitizes Philippine animal shelter operations by centralizing pet records, medical tracking, and adoption workflows into one efficient system.',
     tags: ['SQL', 'PHP'],
     icon: Bot,
-    images: ['/projects/adoption-pawtal.png'], // add more paths here to enable gallery arrows
+    images: ['/public/logos4.png','/public/logos1.png','/public/logos2.png','/public/logos3.png'], // add more paths here to enable gallery arrows
     github: 'https://github.com/zysahidulla',
     live: '#',
   },
