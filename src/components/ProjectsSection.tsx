@@ -29,10 +29,10 @@ const projects = [
     slug: 'pet-adoption-system',
     title: 'Adoption Pawtal',
     description: 'A comprehensive pet adoption management system that streamlines the process of matching pets with potential adopters, featuring user-friendly interfaces for both shelter staff and prospective pet owners.',
-    tags: ['MySQL', 'PHP', ],
+    tags: ['MySQL', 'PHP' ],
     icon: PawPrint,
-    images: ['/projects/weather-dashboard.png'],
-    github: 'https://github.com/zysahidulla',
+    images: ['/paw1.png','/paw2.png', '/paw3.png', '/paw4.png', '/paw5.png', '/paw6.png', '/paw7.png', '/paw8.png'],
+    github: 'https://github.com/zysahidulla/adoption-pawtal',
     live: '#',
   },
 ];
