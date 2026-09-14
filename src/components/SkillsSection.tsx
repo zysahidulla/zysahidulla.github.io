@@ -35,23 +35,23 @@ const SkillCard = ({ skill, index }: { skill: typeof skills[0]; index: number })
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
-      animate={isInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
-      transition={{ 
-        duration: 0.5, 
-        delay: index * 0.05,
-        type: 'spring',
-        stiffness: 200
+      initial={{ opacity: 0, y: 24, scale: 0.96 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 24, scale: 0.96 }}
+      transition={{
+        duration: 0.35,
+        delay: index * 0.04,
+        ease: 'easeOut'
       }}
-      whileHover={{ 
-        scale: 1.15, 
-        rotate: [0, -5, 5, 0],
-        transition: { duration: 0.3 }
+      whileHover={{
+        y: -4,
+        scale: 1.04,
+        transition: { duration: 0.18, ease: 'easeOut' }
       }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       onTouchStart={handleTouch}
       className="relative group"
+      style={{ willChange: 'transform' }}
     >
       <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl glass-card border-gradient flex items-center justify-center p-4 transition-all duration-300 group-hover:glow-primary">
         <img 
@@ -88,17 +88,17 @@ const SkillCard = ({ skill, index }: { skill: typeof skills[0]; index: number })
       {/* Floating particles on hover/touch */}
       {(isHovered || isTouched) && (
         <>
-          {[...Array(3)].map((_, i) => (
+          {[...Array(2)].map((_, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, scale: 0, x: 0, y: 0 }}
-              animate={{ 
+              animate={{
                 opacity: [0, 1, 0],
                 scale: [0, 1, 0],
-                x: [0, (i - 1) * 30],
-                y: [0, -40 - i * 10]
+                x: [0, (i - 0.5) * 24],
+                y: [0, -28 - i * 10]
               }}
-              transition={{ duration: 0.8, delay: i * 0.1 }}
+              transition={{ duration: 0.55, delay: i * 0.08, ease: 'easeOut' }}
               className="absolute top-1/2 left-1/2 w-2 h-2 rounded-full bg-primary"
             />
           ))}
@@ -116,21 +116,21 @@ const SkillsSection = () => {
     <section id="skills" className="relative py-32 overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 grid-pattern opacity-30" />
-      <motion.div 
-        animate={{ 
-          scale: [1, 1.12, 1],
-          opacity: [0.08, 0.16, 0.08]
+      <motion.div
+        animate={{
+          opacity: [0.08, 0.16, 0.08],
+          y: [0, -10, 0]
         }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute bottom-10 left-8 w-72 h-72 bg-secondary/20 rounded-full blur-3xl" 
+        className="absolute bottom-10 left-8 w-72 h-72 bg-secondary/20 rounded-full blur-3xl"
       />
-      <motion.div 
-        animate={{ 
-          scale: [1.12, 1, 1.12],
-          opacity: [0.12, 0.2, 0.12]
+      <motion.div
+        animate={{
+          opacity: [0.12, 0.2, 0.12],
+          y: [0, 12, 0]
         }}
         transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute top-16 right-8 w-64 h-64 bg-primary/20 rounded-full blur-3xl" 
+        className="absolute top-16 right-8 w-64 h-64 bg-primary/20 rounded-full blur-3xl"
       />
 
       <div className="container mx-auto px-6 relative z-10" ref={ref}>
@@ -170,12 +170,12 @@ const SkillsSection = () => {
 
         {/* Decorative floating elements */}
         <motion.div
-          animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
+          animate={{ y: [0, -12, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
           className="absolute top-20 left-10 w-4 h-4 rounded-full bg-primary/30 blur-sm"
         />
         <motion.div
-          animate={{ y: [0, 20, 0], rotate: [0, -10, 0] }}
+          animate={{ y: [0, 12, 0] }}
           transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
           className="absolute bottom-20 right-10 w-6 h-6 rounded-full bg-secondary/30 blur-sm"
         />
