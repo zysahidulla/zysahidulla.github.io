@@ -25,4 +25,17 @@ describe('ProjectDetailPage image viewer', () => {
     fireEvent.click(screen.getByRole('button', { name: /back to gallery/i }));
     expect(screen.queryByRole('button', { name: /back to gallery/i })).not.toBeInTheDocument();
   });
+
+  it('hides the live action for projects that are not publicly deployed', () => {
+    render(
+      <MemoryRouter initialEntries={['/projects/pet-adoption-system']}>
+        <Routes>
+          <Route path="/projects/:slug" element={<ProjectDetailPage />} />
+        </Routes>
+      </MemoryRouter>,
+    );
+
+    expect(screen.getByRole('link', { name: /github/i })).toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: /live/i })).not.toBeInTheDocument();
+  });
 });

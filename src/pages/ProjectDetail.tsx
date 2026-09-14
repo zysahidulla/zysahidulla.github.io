@@ -28,6 +28,7 @@ const ProjectDetailPage = () => {
   }
 
   const images = project.images ?? [project.image ?? ''];
+  const hasLiveLink = Boolean(project.live && project.live !== '#');
 
   const openImageViewer = (index: number) => setSelectedImageIndex(index);
   const closeImageViewer = () => setSelectedImageIndex(null);
@@ -96,15 +97,17 @@ const ProjectDetailPage = () => {
                   <Github className="h-4 w-4" />
                   GitHub
                 </a>
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-transparent px-4 py-2.5 font-medium text-foreground transition-colors hover:border-primary/40 hover:text-primary"
-                >
-                  <ExternalLink className="h-4 w-4" />
-                  Live
-                </a>
+                {hasLiveLink && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-transparent px-4 py-2.5 font-medium text-foreground transition-colors hover:border-primary/40 hover:text-primary"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    Live
+                  </a>
+                )}
               </div>
             </div>
           </div>

@@ -110,6 +110,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
   const images = project.images ?? [];
   const hasImages = images.length > 0;
   const hasMultipleImages = images.length > 1;
+  const hasLiveLink = Boolean(project.live && project.live !== '#');
 
   const showPreviousImage = () => {
     setCurrentImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
@@ -260,17 +261,19 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
           >
             <Github className="w-6 h-6" />
           </motion.a>
-          <motion.a
-            href={project.live}
-            target="_blank"
-            rel="noreferrer"
-            className="p-3 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            aria-label="View Live"
-          >
-            <ExternalLink className="w-6 h-6" />
-          </motion.a>
+          {hasLiveLink && (
+            <motion.a
+              href={project.live}
+              target="_blank"
+              rel="noreferrer"
+              className="p-3 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="View Live"
+            >
+              <ExternalLink className="w-6 h-6" />
+            </motion.a>
+          )}
           <Link
             to={`/projects/${project.slug}`}
             className="rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-sm font-medium text-primary transition-colors hover:border-primary/40 hover:bg-primary/10"
