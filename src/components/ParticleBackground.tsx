@@ -34,16 +34,16 @@ const ParticleBackground = () => {
     };
 
     const particles: Particle[] = [];
-    const particleCount = 52;
+    const particleCount = 72;
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
-        vx: (Math.random() - 0.5) * 0.16,
-        vy: (Math.random() - 0.5) * 0.16,
-        size: Math.random() * 1.4 + 0.5,
-        opacity: Math.random() * 0.22 + 0.05,
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
+        size: Math.random() * 1.8 + 0.7,
+        opacity: Math.random() * 0.28 + 0.08,
       });
     }
 
