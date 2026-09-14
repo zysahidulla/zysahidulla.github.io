@@ -148,6 +148,16 @@
     border: 1px solid hsl(var(--glass-border) / 0.2);
   }
 
+  .role-pill {
+    will-change: transform, box-shadow, border-color;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  }
+
+  .role-pill:hover {
+    box-shadow: 0 0 18px hsl(var(--glow-primary) / 0.18);
+    border-color: hsl(var(--primary) / 0.7);
+  }
+
   /* Glow effects */
   .glow-primary {
     box-shadow: 

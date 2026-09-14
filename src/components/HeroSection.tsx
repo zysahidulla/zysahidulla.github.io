@@ -77,11 +77,16 @@ const HeroSection = () => {
           }} transition={{
             duration: 0.5,
             delay: 0.5 + index * 0.1,
-            ease: [0.25, 0.46, 0.45, 0.94]
+            ease: [0.25, 0.46, 0.45, 0.94],
+            type: 'spring',
+            stiffness: 280,
+            damping: 18
           }} whileHover={{
-            scale: 1.05,
-            borderColor: 'hsl(var(--primary))'
-          }} className="px-4 py-2 rounded-full glass-card text-sm md:text-base text-muted-foreground hover:text-primary transition-all duration-300">
+            scale: 1.02,
+            y: -2,
+            borderColor: 'hsl(var(--primary))',
+            boxShadow: '0 0 18px hsl(var(--glow-primary) / 0.2)'
+          }} className="role-pill px-4 py-2 rounded-full glass-card text-sm md:text-base text-muted-foreground hover:text-primary transition-all duration-300">
                 {role}
               </motion.span>)}
           </motion.div>
