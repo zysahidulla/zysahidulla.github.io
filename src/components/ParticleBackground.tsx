@@ -48,7 +48,9 @@ const ParticleBackground = () => {
     }
 
     const animate = () => {
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.setTransform(Math.min(window.devicePixelRatio || 1, 1.5), 0, 0, Math.min(window.devicePixelRatio || 1, 1.5), 0, 0);
 
       particles.forEach((particle) => {
         particle.x += particle.vx;
@@ -62,25 +64,6 @@ const ParticleBackground = () => {
         ctx.fillStyle = `rgba(255, 107, 181, ${particle.opacity})`;
         ctx.fill();
       });
-
-      if (window.innerWidth > 768) {
-        particles.forEach((p1, i) => {
-          particles.slice(i + 1).forEach((p2) => {
-            const dx = p1.x - p2.x;
-            const dy = p1.y - p2.y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-
-            if (distance < 110) {
-              ctx.beginPath();
-              ctx.moveTo(p1.x, p1.y);
-              ctx.lineTo(p2.x, p2.y);
-              ctx.strokeStyle = `rgba(255, 107, 181, ${0.04 * (1 - distance / 110)})`;
-              ctx.lineWidth = 0.35;
-              ctx.stroke();
-            }
-          });
-        });
-      }
 
       animationFrameId = window.requestAnimationFrame(animate);
     };
