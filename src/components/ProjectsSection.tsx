@@ -11,7 +11,7 @@ const projects = [
     description: 'A personal portfolio website showcasing my skills, projects, and experiences as a developer and designer.',
     tags: ['TypeScript', 'CSS', 'Other'],
     icon: Bot,
-    images: ['/logos1.png','/logos2.png', '/logos3.png', '/logos4.png'],
+    images: ['/zy1.png'],
     github: 'https://github.com/zysahidulla/zysahidulla.github.io',
     live: 'https://zysahidulla.github.io',
   },
