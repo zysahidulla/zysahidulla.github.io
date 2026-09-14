@@ -22,7 +22,7 @@ const App = () => {
 
         {/* Temporary notice - remove this block when the portfolio is finished */}
         {showUpdateNotice && (
-          <div className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
+          <div className="pointer-events-none fixed inset-x-0 top-0 z-[9999] flex justify-center px-4 pt-4">
             <div className="pointer-events-auto w-full max-w-xl rounded-xl border border-amber-400/50 bg-amber-500/10 px-4 py-3 shadow-2xl backdrop-blur-md">
               <div className="flex items-start justify-between gap-3">
                 <div>
