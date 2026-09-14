@@ -89,21 +89,21 @@ const ExperienceSection = () => {
       <div className="absolute inset-0 grid-pattern opacity-20" />
       <motion.div 
         animate={{ 
-          x: [0, 50, 0],
-          y: [0, -30, 0],
-          scale: [1, 1.1, 1]
+          x: [0, 40, 0],
+          y: [0, -20, 0],
+          scale: [1, 1.08, 1]
         }}
         transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute top-1/3 right-0 w-80 h-80 bg-secondary/15 rounded-full blur-3xl" 
+        className="absolute top-20 right-10 w-64 h-64 bg-secondary/15 rounded-full blur-3xl" 
       />
       <motion.div 
         animate={{ 
-          x: [0, -30, 0],
-          y: [0, 20, 0],
-          scale: [1.1, 1, 1.1]
+          x: [0, -20, 0],
+          y: [0, 15, 0],
+          scale: [1.08, 1, 1.08]
         }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute bottom-0 left-1/4 w-64 h-64 bg-primary/15 rounded-full blur-3xl" 
+        className="absolute bottom-8 left-12 w-56 h-56 bg-primary/15 rounded-full blur-3xl" 
       />
 
       <div className="container mx-auto px-6 relative z-10" ref={ref}>

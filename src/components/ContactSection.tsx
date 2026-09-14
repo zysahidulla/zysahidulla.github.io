@@ -67,8 +67,8 @@ const ContactSection = () => {
     <section id="contact" className="relative py-32 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 grid-pattern opacity-20" />
-      <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-secondary/10 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-12 w-56 h-56 bg-secondary/10 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-6 relative z-10" ref={ref}>
         <motion.div

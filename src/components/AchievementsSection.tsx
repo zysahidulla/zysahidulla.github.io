@@ -142,18 +142,18 @@ const AchievementsSection = () => {
       <motion.div 
         animate={{ 
           rotate: [0, 360],
-          scale: [1, 1.2, 1]
+          scale: [1, 1.15, 1]
         }}
         transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-        className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" 
+        className="absolute top-16 left-12 w-72 h-72 bg-primary/10 rounded-full blur-3xl" 
       />
       <motion.div 
         animate={{ 
           rotate: [360, 0],
-          scale: [1.2, 1, 1.2]
+          scale: [1.15, 1, 1.15]
         }}
         transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
-        className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl" 
+        className="absolute bottom-20 right-12 w-64 h-64 bg-secondary/10 rounded-full blur-3xl" 
       />
 
       <div className="container mx-auto px-6 relative z-10" ref={ref}>

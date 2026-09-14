@@ -24,7 +24,7 @@ const ParticleBackground = () => {
     const resizeCanvas = () => {
       const width = window.innerWidth;
       const height = window.innerHeight;
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
 
       canvas.width = Math.floor(width * dpr);
       canvas.height = Math.floor(height * dpr);
@@ -34,16 +34,16 @@ const ParticleBackground = () => {
     };
 
     const particles: Particle[] = [];
-    const particleCount = 80;
+    const particleCount = 52;
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
-        vx: (Math.random() - 0.5) * 0.18,
-        vy: (Math.random() - 0.5) * 0.18,
-        size: Math.random() * 1.6 + 0.5,
-        opacity: Math.random() * 0.25 + 0.05,
+        vx: (Math.random() - 0.5) * 0.16,
+        vy: (Math.random() - 0.5) * 0.16,
+        size: Math.random() * 1.4 + 0.5,
+        opacity: Math.random() * 0.22 + 0.05,
       });
     }
 
@@ -63,22 +63,24 @@ const ParticleBackground = () => {
         ctx.fill();
       });
 
-      particles.forEach((p1, i) => {
-        particles.slice(i + 1).forEach((p2) => {
-          const dx = p1.x - p2.x;
-          const dy = p1.y - p2.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
+      if (window.innerWidth > 768) {
+        particles.forEach((p1, i) => {
+          particles.slice(i + 1).forEach((p2) => {
+            const dx = p1.x - p2.x;
+            const dy = p1.y - p2.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 110) {
-            ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(255, 107, 181, ${0.05 * (1 - distance / 110)})`;
-            ctx.lineWidth = 0.4;
-            ctx.stroke();
-          }
+            if (distance < 110) {
+              ctx.beginPath();
+              ctx.moveTo(p1.x, p1.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.strokeStyle = `rgba(255, 107, 181, ${0.04 * (1 - distance / 110)})`;
+              ctx.lineWidth = 0.35;
+              ctx.stroke();
+            }
+          });
         });
-      });
+      }
 
       animationFrameId = window.requestAnimationFrame(animate);
     };

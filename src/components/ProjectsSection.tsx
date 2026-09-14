@@ -393,8 +393,8 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="relative py-32 overflow-hidden">
       {/* Background */}
-      <div className="absolute top-1/2 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-y-1/2" />
-      <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-secondary/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 right-8 w-72 h-72 bg-primary/10 rounded-full blur-3xl -translate-y-1/2" />
+      <div className="absolute bottom-8 left-12 w-52 h-52 bg-secondary/10 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-6 relative z-10" ref={ref}>
         <motion.div
