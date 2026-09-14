@@ -39,7 +39,7 @@ const experiences = [
     title: 'Manager for Call of Duty Mobile Team 2',
     organization: 'De La Salle University - Viridis Arcus Esports',
     period: '2026 - Present',
-    description: 'Serving the alliance committee to foster partnerships and collaborations, enhancing the organization\'s reach and impact.',
+    description: 'Managing and leading the Call of Duty Mobile Team 2, overseeing team operations, strategy, and performance in competitive esports events.',
     icon: Users,
   },
   {
