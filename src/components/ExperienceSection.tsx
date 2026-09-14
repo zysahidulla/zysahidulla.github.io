@@ -165,11 +165,15 @@ const ExperienceSection = () => {
                     />
                     
                     <motion.div
-                      whileHover={{ x: 10, transition: { duration: 0.2 } }}
+                      whileHover={{
+                        x: 10,
+                        boxShadow: '0 0 25px rgba(255, 107, 181, 0.22), 0 0 50px rgba(168, 85, 247, 0.14)',
+                        transition: { duration: 0.2 }
+                      }}
                       className="glass-card rounded-xl p-5 border-gradient hover-lift"
                     >
                       <div className="flex items-start gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:glow-primary">
                           <Icon className="w-5 h-5 text-primary" />
                         </div>
                         <div className="flex-1">
@@ -229,11 +233,15 @@ const ExperienceSection = () => {
                     />
                     
                     <motion.div
-                      whileHover={{ x: 10, transition: { duration: 0.2 } }}
+                      whileHover={{
+                        x: 10,
+                        boxShadow: '0 0 25px rgba(255, 107, 181, 0.22), 0 0 50px rgba(168, 85, 247, 0.14)',
+                        transition: { duration: 0.2 }
+                      }}
                       className="glass-card rounded-xl p-5 border-gradient hover-lift"
                     >
                       <div className="flex items-start gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                        <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0 group-hover:glow-secondary">
                           <Icon className="w-5 h-5 text-secondary" />
                         </div>
                         <div className="flex-1">
