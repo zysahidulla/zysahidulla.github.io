@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Code2, Palette, Cpu, Sparkles, MapPin, Calendar, GraduationCap, Mail } from 'lucide-react';
+import { Code2, Palette, Cpu, Sparkles, MapPin, Calendar, GraduationCap, Mail, Bot } from 'lucide-react';
 
 const specializations = [
   {
@@ -19,7 +19,7 @@ const specializations = [
     description: 'Creating intuitive, beautiful interfaces that users love to interact with.',
   },
   {
-    icon: Sparkles,
+    icon: Bot,
     title: 'Prompt Engineering',
     description: 'Crafting precise AI prompts to unlock powerful generative capabilities.',
   },
@@ -115,22 +115,22 @@ const AboutSection = () => {
             <div className="glass-card rounded-2xl p-8 border-gradient">
               <h3 className="text-2xl font-bold mb-4 font-display">About Me</h3>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                As a student passionate about technology and design, I'm on a mission to create 
-                digital experiences that make a difference. My journey spans across multiple 
-                disciplines, from writing efficient algorithms to designing pixel-perfect interfaces.
+                Hi! I am Zy and since I was young I've been passionate about designing. 
+                When I started to become more interested in technology, I realized that I could combine my love for design with my interest in engineering.
+                Through hardwork and dedication, I have developed skills which allows me to create innovative solutions that are both functional and visually appealing.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I believe that the best technology is invisible—it just works. Currently exploring the intersection of AI and human-centered design.
+                As a beginner, I am always eager to learn and explore something new, and I am constantly seeking opportunities to grow as a developer and designer.
               </p>
 
               <div className="flex items-center gap-4 mt-8 pt-6 border-t border-border">
                 <div className="text-center">
-                  <div className="text-3xl font-display font-bold text-primary">10+</div>
+                  <div className="text-3xl font-display font-bold text-primary">5+</div>
                   <div className="text-sm text-muted-foreground">Projects</div>
                 </div>
                 <div className="w-px h-12 bg-border" />
                 <div className="text-center">
-                  <div className="text-3xl font-display font-bold text-primary">2+</div>
+                  <div className="text-3xl font-display font-bold text-primary">3</div>
                   <div className="text-sm text-muted-foreground">Years Exp.</div>
                 </div>
               </div>
