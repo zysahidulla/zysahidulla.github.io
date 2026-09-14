@@ -19,7 +19,7 @@ const skills = [
   { name: 'MyPhpAdmin', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg', level: 75 },
   { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', level: 70 },
   { name: 'Arduino', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg', level: 75 },
-  { name: 'Roblox Studio', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/robloxstudio/robloxstudio-original.svg', level: 100 },
+  { name: 'Roblox Studio', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/roblox/roblox-original.svg', level: 100 },
   { name: 'Canva', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg', level: 100 },
   { name: 'Github', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', level: 75 },
 ];
