@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Github, ChevronLeft, ChevronRight, Code, Palette, Smartphone, Bot } from 'lucide-react';
+import { ExternalLink, Github, ChevronLeft, ChevronRight, Code, Palette, Smartphone, Bot, Dog, PawPrint, Calculator } from 'lucide-react';
 
 const projects = [
   {
@@ -20,17 +20,17 @@ const projects = [
     title: 'A.R.T Money Changer Tracker',
     description: 'A user-friendly, real-time financial dashboard that simplifies currency conversion and market tracking for USD, JPY, and PHP through live updates and interactive historical charts.',
     tags: ['HTML', 'CSS', 'JavaScript'],
-    icon: Palette,
+    icon: Calculator,
     images: ['/art1.png','/art2.png', '/art3.png', '/art4.png'],
     github: 'https://github.com/zysahidulla/currencytracker',
     live: 'https://zysahidulla.github.io/currencytracker/',
   },
   {
-    slug: 'weather-analytics-dashboard',
-    title: 'Weather Analytics Dashboard',
-    description: 'A responsive web-based weather analytics dashboard that visualizes real-time weather conditions, geographic data, and environmental trends through interactive maps, charts, and forecasts for multiple Philippine cities.',
-    tags: ['HTMl', 'CSS', 'JavaScript'],
-    icon: Smartphone,
+    slug: 'pet-adoption-system',
+    title: 'Adoption Pawtal',
+    description: 'A comprehensive pet adoption management system that streamlines the process of matching pets with potential adopters, featuring user-friendly interfaces for both shelter staff and prospective pet owners.',
+    tags: ['MySQL', 'PHP', ],
+    icon: PawPrint,
     images: ['/projects/weather-dashboard.png'],
     github: 'https://github.com/zysahidulla',
     live: '#',
