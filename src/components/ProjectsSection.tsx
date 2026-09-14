@@ -7,7 +7,7 @@ import { ExternalLink, Github, ChevronLeft, ChevronRight, Code, Palette, Smartph
 const projects = [
   {
     slug: 'logos-logic-simulator',
-    title: 'Logos: Logic Simulator',
+    title: 'LOGOS: Logic Simulator',
     description: 'A web-based logic circuit simulator that allows users to design, simulate, and visualize digital circuits using a variety of logic gates and components.',
     tags: ['HTML', 'CSS', 'JavaScript'],
     icon: Bot,
@@ -16,24 +16,14 @@ const projects = [
     live: 'https://zysahidulla.github.io/logos-sim/',
   },
   {
-    slug: 'digital-clock',
-    title: 'Digital Clock',
-    description: 'A digital clock that features a living background that mirrors the real world, cycling through sunrise, midday, and starry night animations based on the actual time of day.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    icon: Code,
-    images: ['/projects/digital-clock.png'],
-    github: 'https://github.com/zysahidulla',
-    live: 'test',
-  },
-  {
     slug: 'art-money-changer-tracker',
     title: 'A.R.T Money Changer Tracker',
     description: 'A user-friendly, real-time financial dashboard that simplifies currency conversion and market tracking for USD, JPY, and PHP through live updates and interactive historical charts.',
-    tags: ['HTML', 'CSS', 'Figma', 'JavaScript'],
+    tags: ['HTML', 'CSS', 'JavaScript'],
     icon: Palette,
-    images: ['/projects/art-money-changer.png'],
-    github: 'https://github.com/zysahidulla',
-    live: '#',
+    images: ['/art1.png','/art2.png', '/art3.png', '/art4.png'],
+    github: 'https://github.com/zysahidulla/currencytracker',
+    live: 'https://zysahidulla.github.io/currencytracker/',
   },
   {
     slug: 'weather-analytics-dashboard',
