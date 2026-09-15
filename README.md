@@ -1,10 +1,10 @@
-# Zysahidulla Portfolio
+# Zy Sahidulla's Portfolio
 
-Professional portfolio website for Zysahidulla, showcasing projects, skills, and experience through a modern, responsive single-page application built with React, TypeScript, Vite, and Tailwind CSS.
+Professional portfolio website for Zy Sahidulla, showcasing projects, skills, and experience through a modern, responsive single-page application built with React, TypeScript, Vite, and Tailwind CSS.
 
 ## Overview
 
-This repository contains the personal portfolio and project showcase for Zysahidulla. The site presents a polished digital profile with interactive sections, motion-enhanced components, and a curated collection of featured work. It is designed to highlight technical capabilities, project outcomes, and professional background in a clean and user-friendly format.
+This repository contains the personal portfolio and project showcase for Zy Sahidulla. The site presents a polished digital profile with interactive sections, motion-enhanced components, and a curated collection of featured work. It is designed to highlight technical capabilities, project outcomes, and professional background in a clean and user-friendly format.
 
 ## Features
 
@@ -108,7 +108,7 @@ The site is configured to build into the `docs` directory for GitHub Pages-style
 
 ## License
 
-Copyright (c) 2026 Zysahidulla. All rights reserved.
+Copyright (c) 2026 Zy Sahidulla. All rights reserved.
 
 This repository and all associated content, code, design, branding, assets, and materials are the exclusive intellectual property of Zysahidulla. No part of this project may be copied, reproduced, distributed, modified, sublicensed, or used in any form without the explicit written permission of the owner.
 
