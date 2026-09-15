@@ -12,7 +12,7 @@ describe('ProjectDetailPage image viewer', () => {
       </MemoryRouter>,
     );
 
-    const galleryImage = screen.getByRole('button', { name: /open logos: logic simulator image 1/i });
+    const galleryImage = screen.getAllByRole('button', { name: /open logos: logic simulator image 1/i })[0];
     fireEvent.click(galleryImage);
 
     expect(screen.getByRole('button', { name: /back to gallery/i })).toBeInTheDocument();
@@ -26,7 +26,7 @@ describe('ProjectDetailPage image viewer', () => {
     expect(screen.queryByRole('button', { name: /back to gallery/i })).not.toBeInTheDocument();
   });
 
-  it('hides the live action for projects that are not publicly deployed', () => {
+  it('shows the live action for publicly deployed projects', () => {
     render(
       <MemoryRouter initialEntries={['/projects/pet-adoption-system']}>
         <Routes>
@@ -36,6 +36,6 @@ describe('ProjectDetailPage image viewer', () => {
     );
 
     expect(screen.getByRole('link', { name: /github/i })).toBeInTheDocument();
-    expect(screen.queryByRole('link', { name: /live/i })).not.toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /live/i })).toHaveAttribute('href', 'https://zysahidulla.github.io/adoption-pawtal/');
   });
 });

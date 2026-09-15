@@ -43,7 +43,7 @@ const projects = [
     icon: PawPrint,
     images: ['/paw1.png','/paw2.png', '/paw3.png', '/paw4.png', '/paw5.png', '/paw6.png', '/paw7.png', '/paw8.png'],
     github: 'https://github.com/zysahidulla/adoption-pawtal',
-    live: '#',
+    live: 'https://zysahidulla.github.io/adoption-pawtal/',
   },
 ];
 
