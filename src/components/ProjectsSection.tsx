@@ -19,7 +19,7 @@ const projects = [
     slug: 'logos-logic-simulator',
     title: 'LOGOS: Logic Simulator',
     description: 'A web-based logic circuit simulator that allows users to design, simulate, and visualize digital circuits using a variety of logic gates and components.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
+    tags: ['HTML'],
     icon: Bot,
     images: ['/logos1.png','/logos2.png', '/logos3.png', '/logos4.png'],
     github: 'https://github.com/zysahidulla/logos-sim',
