@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 const personalInfo = {
   name: 'Zy Sahidulla',
-  title: 'Web Developer',
+  title: 'Software Engineer • Web Developer • UI/UX Designer',
   email: 'zysahidulla@gmail.com',
   location: 'Manila, Philippines',
   summary:
-    'Passionate Web Developer & Design and Computer Engineering student with 2+ years of experience building modern, responsive web applications. Skilled in HTML, CSS, JavaScript and full-stack development with a strong eye for UI/UX design.',
+    'Computer Engineering student with a strong interest in software engineering, web development, and user-centered design. Experienced in building responsive interfaces, developing functional web applications, and translating user needs into intuitive digital experiences through thoughtful design and technical execution.',
 };
 
 const education = [
@@ -26,12 +26,39 @@ const education = [
 
 const experience = [
   {
-    role: 'Batch Legislator',
-    organization: 'De La Salle University Student Government',
-    period: '2023 – Present',
+    role: 'Manager, Call of Duty Mobile Team 2',
+    organization: 'De La Salle University - Viridis Arcus Esports',
+    period: '2026 – Present',
     bullets: [
-      'Represented student body in legislative processes and policy discussions.',
-      'Collaborated with USG & College Government to organize university-wide events and initiatives.',
+      'Coordinate competitive team operations, strategic planning, and communication to support team performance and readiness.',
+      'Manage planning and execution of training routines, role assignments, and team alignment for high-performance collaboration.',
+    ],
+  },
+  {
+    role: 'Assistant Vice President for Alliances',
+    organization: 'De La Salle University - ACCESS',
+    period: '2026 – Present',
+    bullets: [
+      'Establish partnerships and collaborative opportunities that strengthen organizational reach and engagement.',
+      'Facilitate cross-organizational relationships to improve member involvement and network-building initiatives.',
+    ],
+  },
+  {
+    role: 'Director for Student Services & Welfare',
+    organization: 'De La Salle University - Engineering College Government (ECG)',
+    period: '2025 – 2026',
+    bullets: [
+      'Led student welfare initiatives and service programs designed to improve the student experience in the college community.',
+      'Worked with stakeholders to identify concerns, coordinate support measures, and implement meaningful campus programs.',
+    ],
+  },
+  {
+    role: 'Batch Legislator',
+    organization: 'De La Salle University - University Student Government',
+    period: '2023 – 2025',
+    bullets: [
+      'Served as a representative in legislative discussions, policy development, and student advocacy initiatives.',
+      'Collaborated with student leaders and university stakeholders to promote solutions that enhance student life and institutional support.',
     ],
   },
   {
@@ -39,53 +66,54 @@ const experience = [
     organization: 'De La Salle University',
     period: '2022 – 2023',
     bullets: [
-      'Served as liaison between students and faculty.',
-      'Led organization of class activities and academic support programs.',
+      'Acted as a communication bridge between students and faculty to support academic coordination and engagement.',
+      'Organized class-focused activities and assisted in promoting student participation and efficient communication.',
     ],
   },
 ];
 
 const skills = {
-  Languages: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C++'],
-  Frontend: ['HTML/CSS', 'React'],
-  'Backend & DB': ['Node.js', 'MongoDB', 'PostgreSQL'],
-  'Tools & Design': ['Git', 'VS Code', 'Figma', 'Photoshop', 'Canva'],
+  Languages: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C++', 'SQL'],
+  Frontend: ['HTML/CSS', 'React', 'Tailwind CSS', 'Responsive Web Design'],
+  'Backend & Data': ['Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'REST APIs'],
+  'UI/UX & Tools': ['Figma', 'Wireframing', 'Prototyping', 'Git', 'GitHub', 'VS Code'],
 };
 
 const projects = [
   {
     name: 'The Adoption Pawtal',
-    tech: 'SQL, PHP',
+    tech: 'PHP, MySQL, UI/UX Design',
     description:
-      'A PHP/MySQL-powered web platform that digitizes Philippine animal shelter operations by centralizing pet records, medical tracking, and adoption workflows.',
+      'Developed a full-stack platform for animal shelter management, streamlining pet records, adoption workflows, and health tracking while improving usability for shelter staff and adopters.',
   },
   {
     name: 'Digital Clock',
     tech: 'HTML, CSS, JavaScript',
     description:
-      'A digital clock with a living background that mirrors the real world, cycling through sunrise, midday, and starry night animations.',
+      'Designed and built an interactive digital clock interface featuring dynamic real-world inspired visuals and responsive front-end interactions.',
   },
   {
     name: 'A.R.T Money Changer Tracker',
-    tech: 'HTML, CSS, Figma, JavaScript',
+    tech: 'HTML, CSS, JavaScript, Figma',
     description:
-      'A real-time financial dashboard that simplifies currency conversion and market tracking for USD, JPY, and PHP.',
+      'Created a data-driven financial dashboard focused on real-time currency conversion, user-friendly data presentation, and clear interface design for market monitoring.',
   },
   {
     name: 'Weather Analytics Dashboard',
     tech: 'HTML, CSS, JavaScript',
     description:
-      'A responsive web-based weather analytics dashboard visualizing real-time weather conditions, geographic data, and forecasts.',
+      'Built a responsive weather analytics interface that visualizes environmental conditions, forecast trends, and geographic data in a clean, accessible format.',
   },
 ];
 
 const achievements = [
   'Class Salutatorian – Academic Excellence (2023)',
-  'With Honors – Consistent honor student throughout Elementary and High School (2013–2019)',
+  'With Honors – Recognized for consistent academic excellence across primary and secondary education (2013–2019)',
   'With High Honors – Senior High School (2020–2023)',
-  'Journalism Excellence – Managing Editor, School Publications (2023)',
-  'Best in Conduct – Maintained discipline record throughout school years (2019–2023)',
+  'Managing Editor – School Publications and Journalism Excellence (2023)',
+  'Best in Conduct – Maintained discipline and professionalism throughout academic years (2019–2023)',
   'Best in Computer Subject – Grade School (2016)',
+  'Student Leadership – Contributed to university governance, organizational leadership, and service initiatives (2023–Present)',
 ];
 
 const handlePrint = () => {
