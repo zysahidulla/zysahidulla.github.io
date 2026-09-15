@@ -8,7 +8,7 @@ const personalInfo = {
   email: 'zysahidulla@gmail.com',
   location: 'Manila, Philippines',
   summary:
-    'Computer Engineering student with a strong interest in software engineering, web development, and user-centered design. Experienced in building responsive interfaces, developing functional web applications, and translating user needs into intuitive digital experiences through thoughtful design and technical execution.',
+    'Computer Engineering student focused on software engineering, web development, and user-centered design. Builds responsive interfaces and digital experiences that combine usability, performance, and clean visual design.',
 };
 
 const education = [
@@ -26,21 +26,12 @@ const education = [
 
 const experience = [
   {
-    role: 'Manager, Call of Duty Mobile Team 2',
-    organization: 'De La Salle University - Viridis Arcus Esports',
-    period: '2026 – Present',
-    bullets: [
-      'Coordinate competitive team operations, strategic planning, and communication to support team performance and readiness.',
-      'Manage planning and execution of training routines, role assignments, and team alignment for high-performance collaboration.',
-    ],
-  },
-  {
     role: 'Assistant Vice President for Alliances',
     organization: 'De La Salle University - ACCESS',
     period: '2026 – Present',
     bullets: [
-      'Establish partnerships and collaborative opportunities that strengthen organizational reach and engagement.',
-      'Facilitate cross-organizational relationships to improve member involvement and network-building initiatives.',
+      'Established partnerships and collaborative opportunities to expand organizational reach and engagement.',
+      'Facilitated cross-organizational relationships that supported member participation and network-building.',
     ],
   },
   {
@@ -48,8 +39,8 @@ const experience = [
     organization: 'De La Salle University - Engineering College Government (ECG)',
     period: '2025 – 2026',
     bullets: [
-      'Led student welfare initiatives and service programs designed to improve the student experience in the college community.',
-      'Worked with stakeholders to identify concerns, coordinate support measures, and implement meaningful campus programs.',
+      'Led student welfare and service initiatives to improve the college experience.',
+      'Coordinated with stakeholders to address student concerns and implement campus support programs.',
     ],
   },
   {
@@ -57,8 +48,8 @@ const experience = [
     organization: 'De La Salle University - University Student Government',
     period: '2023 – 2025',
     bullets: [
-      'Served as a representative in legislative discussions, policy development, and student advocacy initiatives.',
-      'Collaborated with student leaders and university stakeholders to promote solutions that enhance student life and institutional support.',
+      'Represented the student body in legislative discussions and policy development.',
+      'Collaborated with student leaders to improve campus life and institutional support initiatives.',
     ],
   },
   {
@@ -66,8 +57,8 @@ const experience = [
     organization: 'De La Salle University',
     period: '2022 – 2023',
     bullets: [
-      'Acted as a communication bridge between students and faculty to support academic coordination and engagement.',
-      'Organized class-focused activities and assisted in promoting student participation and efficient communication.',
+      'Served as a liaison between students and faculty to support communication and academic coordination.',
+      'Organized class activities and promoted student engagement and participation.',
     ],
   },
 ];
@@ -82,38 +73,23 @@ const skills = {
 const projects = [
   {
     name: 'The Adoption Pawtal',
-    tech: 'PHP, MySQL, UI/UX Design',
+    tech: 'PHP, MySQL, UI/UX',
     description:
-      'Developed a full-stack platform for animal shelter management, streamlining pet records, adoption workflows, and health tracking while improving usability for shelter staff and adopters.',
-  },
-  {
-    name: 'Digital Clock',
-    tech: 'HTML, CSS, JavaScript',
-    description:
-      'Designed and built an interactive digital clock interface featuring dynamic real-world inspired visuals and responsive front-end interactions.',
+      'Built a full-stack shelter management platform that centralized pet records, adoption workflows, and health tracking for easier operations.',
   },
   {
     name: 'A.R.T Money Changer Tracker',
     tech: 'HTML, CSS, JavaScript, Figma',
     description:
-      'Created a data-driven financial dashboard focused on real-time currency conversion, user-friendly data presentation, and clear interface design for market monitoring.',
-  },
-  {
-    name: 'Weather Analytics Dashboard',
-    tech: 'HTML, CSS, JavaScript',
-    description:
-      'Built a responsive weather analytics interface that visualizes environmental conditions, forecast trends, and geographic data in a clean, accessible format.',
+      'Created a real-time financial dashboard focused on clear data presentation and intuitive currency conversion tools.',
   },
 ];
 
 const achievements = [
   'Class Salutatorian – Academic Excellence (2023)',
-  'With Honors – Recognized for consistent academic excellence across primary and secondary education (2013–2019)',
+  'With Honors – Consistent academic excellence (2013–2019)',
   'With High Honors – Senior High School (2020–2023)',
-  'Managing Editor – School Publications and Journalism Excellence (2023)',
-  'Best in Conduct – Maintained discipline and professionalism throughout academic years (2019–2023)',
-  'Best in Computer Subject – Grade School (2016)',
-  'Student Leadership – Contributed to university governance, organizational leadership, and service initiatives (2023–Present)',
+  'Student Leadership – University governance and service initiatives (2023–Present)',
 ];
 
 const handlePrint = () => {
@@ -159,17 +135,17 @@ const CV = () => {
         >
 
           {/* Header */}
-          <div className="bg-gradient-to-r from-primary/20 to-purple-600/20 print:from-gray-100 print:to-gray-100 px-10 py-10 print:py-8 border-b border-border print:border-gray-300">
+          <div className="bg-gradient-to-r from-primary/20 to-purple-600/20 print:from-gray-100 print:to-gray-100 px-10 py-8 print:py-6 border-b border-border print:border-gray-300">
 
             <h1 className="text-4xl print:text-3xl font-display font-bold text-foreground print:text-gray-900 mb-1">
               {personalInfo.name}
             </h1>
 
-            <p className="text-xl print:text-lg text-primary print:text-gray-700 font-semibold mb-4">
+            <p className="text-xl print:text-lg text-primary print:text-gray-700 font-semibold mb-3">
               {personalInfo.title}
             </p>
 
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground print:text-gray-600">
+            <div className="flex flex-wrap gap-x-6 gap-y-1.5 text-sm text-muted-foreground print:text-gray-600">
 
               <span className="flex items-center gap-1.5">
                 <Mail size={14}/> {personalInfo.email}
@@ -186,7 +162,7 @@ const CV = () => {
             </div>
           </div>
 
-          <div className="px-10 py-8 space-y-8 print:space-y-6 print:text-gray-800">
+          <div className="px-10 py-6 space-y-6 print:space-y-4 print:text-gray-800">
 
             {/* Summary */}
             <section>
@@ -344,7 +320,7 @@ const CV = () => {
 };
 
 const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-  <h3 className="text-lg font-display font-bold text-foreground print:text-gray-900 mb-3 pb-2 border-b border-border print:border-gray-300 uppercase tracking-wider text-sm">
+  <h3 className="text-base font-display font-bold text-foreground print:text-gray-900 mb-2 pb-1.5 border-b border-border print:border-gray-300 uppercase tracking-wider text-xs">
     {children}
   </h3>
 );

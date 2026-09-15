@@ -19,9 +19,9 @@ const skills = [
   { name: 'MyPhpAdmin', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg', level: 75 },
   { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', level: 70 },
   { name: 'Arduino', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg', level: 75 },
-  { name: 'Roblox Studio', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/roblox/roblox-original.svg', level: 100 },
+  { name: 'Roblox Studio', icon: 'https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/roblox-studio/default.svg', level: 100 },
   { name: 'Canva', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg', level: 100 },
-  { name: 'Github', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', level: 75 },
+  { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', level: 75 },
 ];
 
 const SkillCard = ({ skill, index }: { skill: typeof skills[0]; index: number }) => {
@@ -60,7 +60,9 @@ const SkillCard = ({ skill, index }: { skill: typeof skills[0]; index: number })
         <img 
           src={skill.icon} 
           alt={skill.name}
-          className="w-10 h-10 md:w-12 md:h-12 object-contain transition-transform duration-300 group-hover:scale-110"
+          className={`w-10 h-10 md:w-12 md:h-12 object-contain transition-transform duration-300 group-hover:scale-110 ${
+            skill.name === 'GitHub' ? 'brightness-0 invert' : ''
+          }`}
         />
       </div>
       
