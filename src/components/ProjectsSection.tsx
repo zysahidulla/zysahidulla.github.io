@@ -312,7 +312,7 @@ const OtherProjectCard = ({ project, index }: { project: (typeof otherProjects)[
       {project.image ? (
         <div className="mb-4 overflow-hidden rounded-xl border border-primary/10 bg-primary/5">
           <img
-            src={project.image}
+            src={Array.isArray(project.image) ? project.image[0] : project.image}
             alt={`${project.title} thumbnail`}
             className="h-32 w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
