@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Github, ChevronLeft, ChevronRight, Code, Palette, Smartphone, Bot, Dog, PawPrint, Calculator } from 'lucide-react';
+import { ExternalLink, Github, ChevronLeft, ChevronRight, Code, Palette, Smartphone, Bot, Dog, PawPrint, Calculator, Clock } from 'lucide-react';
 
 const projects = [
   {
@@ -49,24 +49,24 @@ const projects = [
 
 const otherProjects = [
   {
-    slug: 'mini-portfolio-builder',
-    title: 'Mini Portfolio Builder',
-    description: 'A lightweight portfolio generator for showcasing case studies and personal projects quickly.',
-    tags: ['React', 'Tailwind'],
+    slug: 'ai-whiteboard',
+    title: 'Virtual AI Whiteboard',
+    description: 'A fun and simple virtual whiteboard powered by AI for collaborative brainstorming and idea visualization.',
+    tags: ['Python', 'HTML'],
     icon: Code,
-    image: '/profile.png',
-    github: 'https://github.com/zysahidulla',
-    live: '#',
+    image: ['/ai1.png'],
+    github: 'https://github.com/zysahidulla/aiwhiteboard',
+    live: 'http://zysahidulla.github.io/aiwhiteboard/',
   },
   {
-    slug: 'ui-exploration-kit',
-    title: 'UI Exploration Kit',
-    description: 'A set of reusable design patterns and interface experiments focused on cleaner interactions.',
-    tags: ['Figma', 'UI'],
-    icon: Palette,
-    image: '/profile.png',
-    github: 'https://github.com/zysahidulla',
-    live: '#',
+    slug: 'digital-clock',
+    title: 'Digital Screensaver Clock',
+    description: 'A digital clock screensaver for desktop that displays the current time with a dynamic background and soothing music, providing a visually appealing and relaxing experience.',
+    tags: ['HTML'],
+    icon: Clock,
+    image: ['/clock1.png', '/clock2.png', '/clock3.png', '/clock4.png', '/clock5.png', '/clock6.png'],
+    github: 'https://github.com/zysahidulla/digitalclock',
+    live: 'https://zysahidulla.github.io/digitalclock/',
   },
   {
     slug: 'local-weather-widgets',

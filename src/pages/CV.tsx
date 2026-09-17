@@ -8,7 +8,7 @@ const personalInfo = {
   email: 'zysahidulla@gmail.com',
   location: 'Manila, Philippines',
   summary:
-    'Computer Engineering student focused on software engineering, web development, and user-centered design. Builds responsive interfaces and digital experiences that combine usability, performance, and clean visual design.',
+    'A Computer Engineering student focused on software engineering, web development, and user-centered design. Builds responsive interfaces and digital experiences that combine usability, performance, and clean visual design.',
 };
 
 const education = [
@@ -64,8 +64,8 @@ const experience = [
 ];
 
 const skills = {
-  Languages: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C++', 'SQL'],
-  Frontend: ['HTML/CSS', 'React', 'Tailwind CSS', 'Responsive Web Design'],
+  Languages: ['JavaScript', 'TypeScript', 'Python', 'C++', 'SQL'],
+  Frontend: ['HTML/CSS', 'Tailwind CSS', 'Responsive Web Design'],
   'Backend & Data': ['Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'REST APIs'],
   'UI/UX & Tools': ['Figma', 'Wireframing', 'Prototyping', 'Git', 'GitHub', 'VS Code'],
 };
