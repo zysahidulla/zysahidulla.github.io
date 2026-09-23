@@ -22,8 +22,8 @@ const projects = [
     tags: ['HTML'],
     icon: Bot,
     images: ['/logos1.png','/logos2.png', '/logos3.png', '/logos4.png'],
-    github: 'https://github.com/zysahidulla/logos-sim',
-    live: 'https://zysahidulla.github.io/logos-sim/',
+    github: 'https://github.com/zysahidulla/logos',
+    live: 'https://zysahidulla.github.io/logos/',
   },
   {
     slug: 'art-money-changer-tracker',
@@ -42,8 +42,8 @@ const projects = [
     tags: ['MySQL', 'PHP' ],
     icon: PawPrint,
     images: ['/paw1.png','/paw2.png', '/paw3.png', '/paw4.png', '/paw5.png', '/paw6.png', '/paw7.png', '/paw8.png'],
-    github: 'https://github.com/zysahidulla/adoption-pawtal',
-    live: 'https://zysahidulla.github.io/adoption-pawtal/',
+    github: 'https://github.com/zysahidulla/adoptionpawtal',
+    live: 'https://zysahidulla.github.io/adoptionpawtal/',
   },
 ];
 
