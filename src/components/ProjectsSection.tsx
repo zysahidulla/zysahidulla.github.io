@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Github, ChevronLeft, ChevronRight, Code, Palette, Smartphone, Bot, Dog, PawPrint, Calculator, Clock } from 'lucide-react';
+import { ExternalLink, Github, ChevronLeft, ChevronRight, Code, Palette, Smartphone, Bot, Dog, PawPrint, Calculator, Clock, Book } from 'lucide-react';
 
 const projects = [
   {
@@ -69,14 +69,14 @@ const otherProjects = [
     live: 'https://zysahidulla.github.io/digitalclock/',
   },
   {
-    slug: 'local-weather-widgets',
-    title: 'Local Weather Widgets',
-    description: 'Small utility widgets for weather snapshots, quick checks, and city-based summaries.',
-    tags: ['JavaScript', 'API'],
-    icon: Smartphone,
-    images: '/profile.png',
-    github: 'https://github.com/zysahidulla',
-    live: '#',
+    slug: 'ireviewer-quiz-app',
+    title: 'iReviewer',
+    description: 'A simple quiz application that allows users to test their knowledge on various topics, providing instant feedback and scoring to enhance learning and engagement.',
+    tags: ['HTML'],
+    icon: Book,
+    images: ['/quiz1.png', '/quiz4.png', '/quiz2.png', '/quiz3.png'],
+    github: 'https://github.com/zysahidulla/ireviewer',
+    live: 'https://zysahidulla.github.io/ireviewer/',
   },
   {
     slug: 'bot-experiments',
