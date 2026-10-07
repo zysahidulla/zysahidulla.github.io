@@ -22,6 +22,8 @@ const skills = [
   { name: 'Roblox Studio', icon: 'https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/roblox-studio/default.svg', level: 100 },
   { name: 'Canva', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg', level: 100 },
   { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', level: 75 },
+  { name: 'MatLab', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg', level: 75 },
+  { name: 'AutoCad', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/autocad/autocad-original.svg', level: 100 },
 ];
 
 const SkillCard = ({ skill, index }: { skill: typeof skills[0]; index: number }) => {
