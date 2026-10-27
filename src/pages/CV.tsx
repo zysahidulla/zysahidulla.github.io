@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { Download, ArrowLeft, Mail, MapPin, Github } from 'lucide-react';
+import { Download, ArrowLeft, Mail, MapPin, Github, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { certifications } from '@/components/CertificationsSection';
 
 const personalInfo = {
   name: 'Zy Sahidulla',
@@ -222,6 +223,42 @@ const CV = () => {
 
               </div>
             </section>
+
+            {certifications.length > 0 && (
+              <section>
+                <SectionTitle>Certifications</SectionTitle>
+                <div className="space-y-3 print:space-y-2">
+                  {certifications.map((certification) => (
+                    <div
+                      key={`${certification.name}-${certification.issuer}`}
+                      className="flex justify-between items-start gap-4"
+                    >
+                      <div>
+                        <h4 className="font-semibold text-foreground print:text-gray-900">
+                          {certification.name}
+                        </h4>
+                        <p className="text-sm text-muted-foreground print:text-gray-600">
+                          {certification.issuer}
+                        </p>
+                        {certification.credentialUrl && (
+                          <a
+                            href={certification.credentialUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="print:hidden inline-flex items-center gap-1 text-xs text-primary hover:underline mt-1"
+                          >
+                            View credential <ExternalLink size={12} />
+                          </a>
+                        )}
+                      </div>
+                      <span className="text-sm text-muted-foreground print:text-gray-500 whitespace-nowrap">
+                        {certification.date}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
 
             {/* Experience */}
             <section>

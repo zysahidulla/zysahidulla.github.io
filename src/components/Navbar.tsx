@@ -18,6 +18,9 @@ const navItems = [{
   name: 'Achievements',
   href: '#achievements'
 }, {
+  name: 'Certifications',
+  href: '#certifications'
+}, {
   name: 'Projects',
   href: '#projects'
 }, {
