@@ -80,10 +80,11 @@ const SkillCard = ({ skill, index }: { skill: typeof skills[0]; index: number })
           <div className="flex items-center gap-2 mt-1">
             <div className="w-16 h-1.5 bg-muted rounded-full overflow-hidden">
               <motion.div
-                initial={{ width: 0 }}
-                animate={(isHovered || isTouched) ? { width: `${skill.level}%` } : { width: 0 }}
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: (isHovered || isTouched) ? skill.level / 100 : 0 }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
                 className="h-full rounded-full bg-gradient-to-r from-primary to-secondary"
+                style={{ transformOrigin: 'left center' }}
               />
             </div>
             <span className="text-primary font-bold text-xs">{skill.level}%</span>
