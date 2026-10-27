@@ -16,20 +16,12 @@ type Certification = {
 // eslint-disable-next-line react-refresh/only-export-components
 export const certifications: Certification[] = [
   {
-    name: 'Sample: Web Development Fundamentals',
-    issuer: 'Replace with certificate provider',
-    date: 'Year',
-    description: 'Placeholder entry — replace with your actual certificate details.',
-    imageUrl: '/certificates/your-certificate.jpg',
-    credentialUrl: 'https://...', // optional
-  },
-  {
-    name: 'Sample: UI/UX Design Essentials',
-    issuer: 'Replace with certificate provider',
-    date: 'Year',
-    description: 'Placeholder entry — replace with your actual certificate details.',
-    imageUrl: '/certificates/your-certificate.jpg',
-    credentialUrl: 'https://...', // optional
+    name: 'Foundations of Statistical Analysis with Jamovi',
+    issuer: 'Academic Support for Instructional Services and Technology',
+    date: 'June 26, 2026',
+    description: 'Completed an introductory, hands-on course in statistical analysis using Jamovi, covering data preparation, descriptive and inferential statistics, assumption testing, and the creation and interpretation of publication-ready tables and visualizations.',
+    imageUrl: '/jamovi.png',
+    credentialUrl: 'https://www.credential.net/72a1f968-250f-4807-801d-0c8393d3b0df#acc.pzM2aAN1',
   },
 ];
 
