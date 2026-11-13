@@ -15,6 +15,14 @@ type Certification = {
 // The CV imports this list so both views stay in sync.
 // eslint-disable-next-line react-refresh/only-export-components
 export const certifications: Certification[] = [
+    {
+    name: 'MATLAB Onramp',
+    issuer: 'MathWorks',
+    date: 'September 13, 2025',
+    description: 'Completed a self-paced introductory course in MATLAB, covering the MATLAB environment, commands, vectors and matrices, array manipulation, calculations, function calls, data import, logical arrays, programming, and data visualization through plots.',
+    imageUrl: '/matlab.png',
+    credentialUrl: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=6a1b3bf1-644b-4154-a59f-d25fb5a87253&',
+  },
   {
     name: 'Foundations of Statistical Analysis with Jamovi',
     issuer: 'Academic Support for Instructional Services and Technology',
@@ -22,14 +30,6 @@ export const certifications: Certification[] = [
     description: 'Completed an introductory, hands-on course in statistical analysis using Jamovi, covering data preparation, descriptive and inferential statistics, assumption testing, and the creation and interpretation of publication-ready tables and visualizations.',
     imageUrl: '/jamovi.png',
     credentialUrl: 'https://www.credential.net/72a1f968-250f-4807-801d-0c8393d3b0df#acc.pzM2aAN1',
-  },
-  {
-    name: 'MATLAB Onramp',
-    issuer: 'MathWorks',
-    date: 'September 13, 2025',
-    description: 'Completed a self-paced introductory course in MATLAB, covering the MATLAB environment, commands, vectors and matrices, array manipulation, calculations, function calls, data import, logical arrays, programming, and data visualization through plots.',
-    imageUrl: '/matlab.png',
-    credentialUrl: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=6a1b3bf1-644b-4154-a59f-d25fb5a87253&',
   }
 ];
 

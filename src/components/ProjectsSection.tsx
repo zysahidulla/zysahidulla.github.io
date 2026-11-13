@@ -2,9 +2,19 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Github, ChevronLeft, ChevronRight, Code, Palette, Smartphone, Bot, Dog, PawPrint, Calculator, Clock, Book } from 'lucide-react';
+import { ExternalLink, Github, ChevronLeft, ChevronRight, Code, Palette, Smartphone, Bot, Dog, PawPrint, Calculator, Clock, Book, DollarSign } from 'lucide-react';
 
 const projects = [
+  {
+    slug: 'seller-shield-paypal',
+    title: 'Seller Shield',
+    description: 'Built for the PayPal AI Hackathon on Devpost. It helps a small seller review orders before capturing payment and prepare a response when a buyer opens a dispute. The AI makes recommendations only; the seller makes the decisions.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'AI'],
+    icon: DollarSign,
+    images: ['/Paypal1.png', '/Paypal2.png', '/Paypal3.png', '/Paypal4.png', '/Paypal5.png', '/Paypal6.png'],
+    github: 'https://github.com/zysahidulla/hackathon-app',
+    live: '#',
+  },
   {
     slug: 'zy-sahidulla-portfolio',
     title: 'My Portfolio',
