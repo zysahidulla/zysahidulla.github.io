@@ -36,6 +36,13 @@ const education = [
 
 const experiences = [
   {
+    title: 'Enrollment Assistant Task Force',
+    organization: 'De La Salle University - Associate for Creatives Committee',
+    period: '2026 - Present',
+    description: 'Assisting in the enrollment process by providing support and guidance to new students in designing pubmats and posting, ensuring a smooth transition into university life.',
+    icon: Users,
+  },
+  {
     title: 'Manager for Call of Duty Mobile Team 2',
     organization: 'De La Salle University - Viridis Arcus Esports',
     period: '2026 - Present',
